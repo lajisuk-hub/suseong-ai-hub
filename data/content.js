@@ -4,27 +4,35 @@
 // ============================================================
 
 // 홈페이지 맨 위에 나오는 큰 슬라이드입니다.
-// image 자리에 사진 파일을 넣으면 사진이 나오고,
-// 사진이 없으면 예쁜 색 배경으로 나옵니다.
-// 사진은 public/slides 폴더에 넣고 "/slides/파일명.jpg" 처럼 씁니다.
+// - image: 그림 파일 (public/slides 폴더에 넣고 "/slides/파일명" 형식)
+// - title이 비어 있으면("") 글상자를 띄우지 않습니다 (그림 안에 글자가 이미 있을 때)
+// - light: true 면 밝은 그림용 (하얀 글상자 + 남색 글씨)
+// - textPos: "top" 이면 글상자가 위쪽에 나옵니다
 export const slides = [
   {
-    image: "/slides/slide1-sunrise.svg",
-    title: "수성구 AI선도기관",
-    subtitle: "함께 성장하는 우리 기관들을 소개합니다",
-    bg: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    image: "/slides/hero-ai-education.png",
+    title: "",
+    subtitle: "",
+    bg: "linear-gradient(135deg, #EAF1FF, #DDE9FF)",
+    light: true,
+    // 좁은 화면에서 그림이 잘릴 때 아이들·로봇 쪽(오른쪽)이 보이게
+    pos: "68% center",
   },
   {
-    image: "/slides/slide2-balloons.svg",
+    image: "/slides/slide2-ai-education.svg",
     title: "아이들과 함께하는 AI 교육",
-    subtitle: "미래를 준비하는 즐거운 배움",
-    bg: "linear-gradient(135deg, #f6ad55 0%, #ed64a6 100%)",
+    subtitle: "사람을 이해하는 인공지능, 미래를 준비하는 교육",
+    bg: "linear-gradient(135deg, #EAF1FF, #DDE9FF)",
+    light: true,
+    textPos: "top",
   },
   {
     image: "/slides/slide3-network.svg",
     title: "참여기관을 눌러보세요",
     subtitle: "아래로 내리면 각 기관 홈페이지로 갈 수 있어요",
-    bg: "linear-gradient(135deg, #38b2ac 0%, #4299e1 100%)",
+    bg: "linear-gradient(135deg, #EAF1FF, #DDE9FF)",
+    light: true,
+    textPos: "top",
   },
 ];
 
@@ -38,7 +46,7 @@ export const organizations = [
     url: "https://mentor-homepage.vercel.app",
     image: null,
     emoji: "🏫",
-    color: "linear-gradient(135deg, #667eea, #764ba2)",
+    color: "linear-gradient(135deg, #6D8DF0, #7C5CF0)",
   },
   {
     name: "참여기관 2",
@@ -46,7 +54,7 @@ export const organizations = [
     url: "",
     image: null,
     emoji: "🌱",
-    color: "linear-gradient(135deg, #48bb78, #38b2ac)",
+    color: "linear-gradient(135deg, #5AA7E8, #5AD1C8)",
   },
   {
     name: "참여기관 3",
@@ -54,7 +62,7 @@ export const organizations = [
     url: "",
     image: null,
     emoji: "🎨",
-    color: "linear-gradient(135deg, #ed8936, #f6ad55)",
+    color: "linear-gradient(135deg, #7FB5FF, #6D8DF0)",
   },
   {
     name: "참여기관 4",
@@ -62,7 +70,7 @@ export const organizations = [
     url: "",
     image: null,
     emoji: "🧸",
-    color: "linear-gradient(135deg, #ed64a6, #d53f8c)",
+    color: "linear-gradient(135deg, #8FA8F5, #B9A8FF)",
   },
   {
     name: "참여기관 5",
@@ -70,7 +78,7 @@ export const organizations = [
     url: "",
     image: null,
     emoji: "📚",
-    color: "linear-gradient(135deg, #4299e1, #3182ce)",
+    color: "linear-gradient(135deg, #48B8A8, #7EDCD6)",
   },
   {
     name: "참여기관 6",
@@ -78,7 +86,7 @@ export const organizations = [
     url: "",
     image: null,
     emoji: "🌟",
-    color: "linear-gradient(135deg, #9f7aea, #805ad5)",
+    color: "linear-gradient(135deg, #7C5CF0, #A78BFA)",
   },
 ];
 
@@ -86,5 +94,5 @@ export const organizations = [
 export const siteInfo = {
   title: "수성구 AI선도기관",
   description: "수성구 AI선도기관 참여기관을 한눈에 보고 방문할 수 있는 홈페이지",
-  footer: "수성구 AI선도기관 네트워크",
+  footer: "대구광역시 수성구 · AI선도기관 네트워크",
 };

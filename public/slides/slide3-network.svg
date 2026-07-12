@@ -1,103 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', sans-serif">
   <defs>
-    <linearGradient id="night" x1="0" y1="0" x2="0.6" y2="1">
-      <stop offset="0" stop-color="#5B6BD5"/>
-      <stop offset="0.55" stop-color="#6C5BC9"/>
-      <stop offset="1" stop-color="#4A3E9E"/>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#F7FAFF"/>
+      <stop offset="0.55" stop-color="#EAF1FF"/>
+      <stop offset="1" stop-color="#DCE8FF"/>
     </linearGradient>
-    <radialGradient id="nodeGlow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
-      <stop offset="0.4" stop-color="#FFE9A0" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#FFE9A0" stop-opacity="0"/>
+    <linearGradient id="wave3a" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6D8DF0"/>
+      <stop offset="0.6" stop-color="#7FB5FF"/>
+      <stop offset="1" stop-color="#5AD1C8"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#BFD4FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#BFD4FF" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="moonGlow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#FFF7D6" stop-opacity="0.8"/>
-      <stop offset="1" stop-color="#FFF7D6" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="aiText3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4F6EF7"/>
+      <stop offset="1" stop-color="#7C5CF0"/>
+    </linearGradient>
+    <filter id="soft3" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#3E5BC7" flood-opacity="0.16"/>
+    </filter>
   </defs>
 
-  <rect width="1600" height="900" fill="url(#night)"/>
+  <rect width="1600" height="900" fill="url(#bg3)"/>
 
-  <!-- 별 -->
-  <g fill="#FFFFFF">
-    <circle cx="120" cy="120" r="3.5" opacity="0.9"/>
-    <circle cx="300" cy="80" r="2.5" opacity="0.7"/>
-    <circle cx="480" cy="160" r="3" opacity="0.8"/>
-    <circle cx="700" cy="90" r="2.5" opacity="0.65"/>
-    <circle cx="920" cy="150" r="3.5" opacity="0.9"/>
-    <circle cx="1120" cy="70" r="2.5" opacity="0.7"/>
-    <circle cx="1330" cy="140" r="3" opacity="0.8"/>
-    <circle cx="1500" cy="90" r="2.5" opacity="0.7"/>
-    <circle cx="200" cy="300" r="2.5" opacity="0.6"/>
-    <circle cx="1450" cy="300" r="2.5" opacity="0.6"/>
-    <circle cx="80" cy="500" r="2.5" opacity="0.5"/>
-    <circle cx="1540" cy="520" r="2.5" opacity="0.55"/>
-    <circle cx="620" cy="250" r="2" opacity="0.5"/>
-    <circle cx="1050" cy="280" r="2" opacity="0.5"/>
+  <!-- 점 연결 장식 -->
+  <g stroke="#9DB6F5" stroke-width="3" fill="none" opacity="0.7">
+    <path d="M1000 120 Q 1180 50 1360 110 T 1580 100"/>
+    <path d="M80 180 Q 240 110 400 160"/>
   </g>
-
-  <!-- 반짝이 별 (십자) -->
-  <g fill="#FFF3C9" opacity="0.95">
-    <path d="M390 210 l 6 16 l 16 6 l -16 6 l -6 16 l -6 -16 l -16 -6 l 16 -6 Z"/>
-    <path d="M1230 210 l 5 14 l 14 5 l -14 5 l -5 14 l -5 -14 l -14 -5 l 14 -5 Z"/>
-    <path d="M810 60 l 5 14 l 14 5 l -14 5 l -5 14 l -5 -14 l -14 -5 l 14 -5 Z"/>
+  <g fill="#7C9BF0" opacity="0.85">
+    <circle cx="1000" cy="120" r="8"/>
+    <circle cx="1360" cy="110" r="10"/>
+    <circle cx="80" cy="180" r="7"/>
+    <circle cx="400" cy="160" r="8"/>
   </g>
+  <circle cx="1500" cy="640" r="160" fill="#C9DBFF" opacity="0.4"/>
+  <circle cx="120" cy="620" r="130" fill="#CFE6FF" opacity="0.5"/>
 
-  <!-- 달 -->
-  <g transform="translate(1360,180)">
-    <circle cx="0" cy="0" r="130" fill="url(#moonGlow)"/>
-    <circle cx="0" cy="0" r="62" fill="#FFF3C9"/>
-    <circle cx="22" cy="-14" r="48" fill="#6C5BC9" opacity="0"/>
-    <circle cx="-16" cy="8" r="10" fill="#F2E2A8"/>
-    <circle cx="18" cy="-18" r="7" fill="#F2E2A8"/>
-    <circle cx="12" cy="24" r="6" fill="#F2E2A8"/>
-  </g>
-
-  <!-- 연결선 -->
-  <g stroke="#FFE9A0" stroke-width="3" opacity="0.55" fill="none" stroke-dasharray="2 10" stroke-linecap="round">
-    <path d="M330 620 Q 500 480 680 560"/>
-    <path d="M680 560 Q 820 620 960 520"/>
-    <path d="M960 520 Q 1120 420 1280 540"/>
-    <path d="M330 620 Q 560 720 800 700 Q 1060 680 1280 540"/>
-    <path d="M680 560 Q 700 420 800 360"/>
-    <path d="M960 520 Q 900 430 800 360"/>
-  </g>
-
-  <!-- 중심 노드: 큰 별 (AI선도기관) -->
-  <g transform="translate(800,360)">
-    <circle cx="0" cy="0" r="120" fill="url(#nodeGlow)"/>
-    <path d="M0 -58 L 16 -18 L 58 -14 L 26 14 L 36 56 L 0 32 L -36 56 L -26 14 L -58 -14 L -16 -18 Z" fill="#FFD976"/>
-  </g>
-
-  <!-- 기관 노드들: 작은 집 모양 -->
+  <!-- 반짝이 -->
   <g>
-    <g transform="translate(330,620)">
-      <circle cx="0" cy="0" r="86" fill="url(#nodeGlow)"/>
-      <rect x="-34" y="-8" width="68" height="44" rx="8" fill="#FFF6E8"/>
-      <path d="M-44 -4 L 0 -40 L 44 -4 Z" fill="#FF9E7D"/>
-      <rect x="-10" y="12" width="20" height="24" rx="4" fill="#C98850"/>
+    <path d="M700 160 l 6 15 l 15 6 l -15 6 l -6 15 l -6 -15 l -15 -6 l 15 -6 Z" fill="#FFC46B"/>
+    <path d="M1230 300 l 5 12 l 12 5 l -12 5 l -5 12 l -5 -12 l -12 -5 l 12 -5 Z" fill="#7EDCD6"/>
+    <path d="M350 340 l 4 11 l 11 4 l -11 4 l -4 11 l -4 -11 l -11 -4 l 11 -4 Z" fill="#B9A8FF"/>
+  </g>
+
+  <!-- 중앙 허브 -->
+  <g transform="translate(800,330)">
+    <circle cx="0" cy="0" r="210" fill="url(#glow3)"/>
+    <circle cx="0" cy="0" r="130" fill="none" stroke="#A8C0F8" stroke-width="2.5" stroke-dasharray="4 12"/>
+    <circle cx="0" cy="0" r="84" fill="#FFFFFF" filter="url(#soft3)"/>
+    <text x="0" y="-2" text-anchor="middle" font-size="46" font-weight="800" fill="url(#aiText3)">AI</text>
+    <text x="0" y="36" text-anchor="middle" font-size="24" font-weight="700" fill="#3D4C7E">선도기관</text>
+  </g>
+
+  <!-- 허브-기관 연결선 -->
+  <g stroke="#8FA8F5" stroke-width="3" fill="none" opacity="0.75" stroke-dasharray="1 12" stroke-linecap="round">
+    <path d="M800 420 Q 780 520 760 570"/>
+    <path d="M735 380 Q 500 480 400 540"/>
+    <path d="M865 380 Q 1100 480 1200 540"/>
+    <path d="M700 350 Q 350 380 190 480"/>
+    <path d="M900 350 Q 1250 380 1410 480"/>
+  </g>
+
+  <!-- 기관 노드 (집 모양) -->
+  <g>
+    <g transform="translate(190,540)">
+      <circle cx="0" cy="0" r="64" fill="#FFFFFF" filter="url(#soft3)"/>
+      <g stroke="#4F6EF7" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-26 -2 L 0 -26 L 26 -2"/>
+        <path d="M-18 -6 v 26 h 36 v -26"/>
+        <rect x="-6" y="6" width="12" height="14"/>
+      </g>
     </g>
-    <g transform="translate(680,560) scale(0.9)">
-      <circle cx="0" cy="0" r="86" fill="url(#nodeGlow)"/>
-      <rect x="-34" y="-8" width="68" height="44" rx="8" fill="#FFF6E8"/>
-      <path d="M-44 -4 L 0 -40 L 44 -4 Z" fill="#8FC9FF"/>
-      <rect x="-10" y="12" width="20" height="24" rx="4" fill="#C98850"/>
+    <g transform="translate(400,600)">
+      <circle cx="0" cy="0" r="64" fill="#FFFFFF" filter="url(#soft3)"/>
+      <g stroke="#5AA7E8" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-26 -2 L 0 -26 L 26 -2"/>
+        <path d="M-18 -6 v 26 h 36 v -26"/>
+        <rect x="-6" y="6" width="12" height="14"/>
+      </g>
     </g>
-    <g transform="translate(960,520) scale(0.95)">
-      <circle cx="0" cy="0" r="86" fill="url(#nodeGlow)"/>
-      <rect x="-34" y="-8" width="68" height="44" rx="8" fill="#FFF6E8"/>
-      <path d="M-44 -4 L 0 -40 L 44 -4 Z" fill="#93E29E"/>
-      <rect x="-10" y="12" width="20" height="24" rx="4" fill="#C98850"/>
+    <g transform="translate(760,640)">
+      <circle cx="0" cy="0" r="70" fill="#FFFFFF" filter="url(#soft3)"/>
+      <g stroke="#7C5CF0" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-28 -2 L 0 -28 L 28 -2"/>
+        <path d="M-20 -6 v 28 h 40 v -28"/>
+        <rect x="-7" y="7" width="14" height="15"/>
+      </g>
     </g>
-    <g transform="translate(1280,540)">
-      <circle cx="0" cy="0" r="86" fill="url(#nodeGlow)"/>
-      <rect x="-34" y="-8" width="68" height="44" rx="8" fill="#FFF6E8"/>
-      <path d="M-44 -4 L 0 -40 L 44 -4 Z" fill="#C3A9FF"/>
-      <rect x="-10" y="12" width="20" height="24" rx="4" fill="#C98850"/>
+    <g transform="translate(1200,600)">
+      <circle cx="0" cy="0" r="64" fill="#FFFFFF" filter="url(#soft3)"/>
+      <g stroke="#48B8A8" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-26 -2 L 0 -26 L 26 -2"/>
+        <path d="M-18 -6 v 26 h 36 v -26"/>
+        <rect x="-6" y="6" width="12" height="14"/>
+      </g>
+    </g>
+    <g transform="translate(1410,540)">
+      <circle cx="0" cy="0" r="64" fill="#FFFFFF" filter="url(#soft3)"/>
+      <g stroke="#E8829B" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-26 -2 L 0 -26 L 26 -2"/>
+        <path d="M-18 -6 v 26 h 36 v -26"/>
+        <rect x="-6" y="6" width="12" height="14"/>
+      </g>
     </g>
   </g>
 
-  <!-- 아래 언덕 실루엣 -->
-  <path d="M0 780 Q 400 700 800 760 T 1600 740 L 1600 900 L 0 900 Z" fill="#3A3080" opacity="0.85"/>
-  <path d="M0 840 Q 500 780 1000 830 T 1600 820 L 1600 900 L 0 900 Z" fill="#2E2668"/>
+  <!-- 아래 물결 -->
+  <path d="M0 780 Q 260 720 520 760 T 1040 750 T 1600 730 L 1600 900 L 0 900 Z" fill="#8FA8F5" opacity="0.35"/>
+  <path d="M0 830 Q 300 770 620 810 T 1180 800 T 1600 780 L 1600 900 L 0 900 Z" fill="url(#wave3a)" opacity="0.85"/>
 </svg>

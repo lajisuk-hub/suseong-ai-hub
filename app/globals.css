@@ -13,8 +13,39 @@ html {
 body {
   font-family: "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo",
     "Malgun Gothic", sans-serif;
-  color: #2d3748;
-  background: #fdfdfd;
+  color: #26325e;
+  background: #f8faff;
+}
+
+/* ===== 위쪽 로고 띠 ===== */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 14px rgba(62, 91, 199, 0.08);
+}
+
+.header-logo {
+  height: 44px;
+  width: auto;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1e2a5a;
+  letter-spacing: -0.01em;
+  border-left: 2px solid #d4defa;
+  padding-left: 14px;
 }
 
 /* ===== 슬라이드 ===== */
@@ -90,6 +121,25 @@ body {
   animation: rise 0.9s ease both;
 }
 
+.slide-text.light {
+  background: rgba(255, 255, 255, 0.88);
+  color: #1e2a5a;
+  text-shadow: none;
+  box-shadow: 0 10px 36px rgba(62, 91, 199, 0.16);
+}
+
+.slide-text.light p {
+  color: #51608f;
+}
+
+.slide.pos-top {
+  align-items: flex-start;
+}
+
+.slide.pos-top .slide-text {
+  margin-top: 118px;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -119,19 +169,20 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.9);
   border: none;
-  color: #fff;
+  color: #4f6ef7;
   font-size: 1.5rem;
   width: 48px;
   height: 48px;
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.2s;
+  box-shadow: 0 4px 14px rgba(62, 91, 199, 0.18);
 }
 
 .arrow:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: #ffffff;
 }
 
 .arrow.left {
@@ -158,13 +209,13 @@ body {
   height: 12px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(30, 42, 90, 0.28);
   cursor: pointer;
   transition: transform 0.2s, background 0.2s;
 }
 
 .dot.active {
-  background: #fff;
+  background: #4f6ef7;
   transform: scale(1.25);
 }
 
@@ -306,7 +357,7 @@ body {
   margin-top: 14px;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #5a67d8;
+  color: #4f6ef7;
 }
 
 .card-link.pending {
@@ -315,11 +366,17 @@ body {
 
 /* ===== 아래 꼬리말 ===== */
 .footer {
-  border-top: 1px solid #edf2f7;
-  padding: 28px 24px;
+  border-top: 1px solid #e4eaf8;
+  padding: 34px 24px;
   text-align: center;
-  color: #a0aec0;
+  color: #8b97bd;
   font-size: 0.92rem;
+}
+
+.footer-logo {
+  height: 52px;
+  width: auto;
+  margin-bottom: 12px;
 }
 
 @media (max-width: 600px) {

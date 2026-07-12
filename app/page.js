@@ -29,6 +29,12 @@ export default function Home() {
 
   return (
     <main>
+      {/* ===== 위쪽 로고 띠 ===== */}
+      <header className="site-header">
+        <img src="/logo-suseong.png" alt="대구광역시 수성구" className="header-logo" />
+        <span className="header-title">AI선도기관</span>
+      </header>
+
       {/* ===== 맨 위 큰 슬라이드 ===== */}
       <section
         className="hero"
@@ -38,21 +44,28 @@ export default function Home() {
         {slides.map((slide, i) => (
           <div
             key={i}
-            className={`slide ${i === current ? "active" : ""}`}
+            className={`slide ${i === current ? "active" : ""} ${
+              slide.textPos === "top" ? "pos-top" : ""
+            }`}
           >
             <div
               className="slide-bg"
               style={
                 slide.image
-                  ? { backgroundImage: `url(${slide.image})` }
+                  ? {
+                      backgroundImage: `url(${slide.image})`,
+                      backgroundPosition: slide.pos || "center",
+                    }
                   : { background: slide.bg }
               }
             />
-            <div className="slide-overlay" />
-            <div className="slide-text">
-              <h1>{slide.title}</h1>
-              <p>{slide.subtitle}</p>
-            </div>
+            {!slide.light && <div className="slide-overlay" />}
+            {slide.title && (
+              <div className={`slide-text ${slide.light ? "light" : ""}`}>
+                <h1>{slide.title}</h1>
+                <p>{slide.subtitle}</p>
+              </div>
+            )}
           </div>
         ))}
 
@@ -130,6 +143,7 @@ export default function Home() {
       </section>
 
       <footer className="footer">
+        <img src="/logo-suseong.png" alt="대구광역시 수성구" className="footer-logo" />
         <p>{siteInfo.footer}</p>
       </footer>
     </main>
