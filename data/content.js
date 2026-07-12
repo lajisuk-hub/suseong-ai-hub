@@ -19,6 +19,15 @@ export const slides = [
     pos: "68% center",
   },
   {
+    image: "/slides/hero2-kids-future.png",
+    title: "",
+    subtitle: "",
+    bg: "linear-gradient(135deg, #FFF6E8, #EAF1FF)",
+    light: true,
+    // 좁은 화면에서 아이들·로봇 쪽이 보이게
+    pos: "62% center",
+  },
+  {
     image: "/slides/slide2-ai-education.svg",
     title: "아이들과 함께하는 AI 교육",
     subtitle: "사람을 이해하는 인공지능, 미래를 준비하는 교육",
