@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: #2d3748;
+  background: #fdfdfd;
+}
+
+/* ===== 슬라이드 ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.slide-text {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 0 24px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.slide-text h1 {
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.slide-text p {
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.22);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.arrow.left {
+  left: 18px;
+}
+
+.arrow.right {
+  right: 18px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 92px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.dot.active {
+  background: #fff;
+  transform: scale(1.25);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  border: none;
+  color: #2d3748;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s;
+}
+
+.scroll-hint:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.chevron {
+  display: inline-block;
+  animation: bounce 1.6s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* ===== 참여기관 ===== */
+.orgs {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  text-align: center;
+}
+
+.orgs h2 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.orgs-sub {
+  margin-top: 12px;
+  color: #718096;
+  font-size: 1.05rem;
+}
+
+.grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 26px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.13);
+}
+
+.card.disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.card.disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+}
+
+.card-img {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-emoji {
+  font-size: 3.4rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+}
+
+.card-body {
+  padding: 20px 22px 22px;
+}
+
+.card-body h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card-body p {
+  margin-top: 6px;
+  color: #718096;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #5a67d8;
+}
+
+.card-link.pending {
+  color: #a0aec0;
+}
+
+/* ===== 아래 꼬리말 ===== */
+.footer {
+  border-top: 1px solid #edf2f7;
+  padding: 28px 24px;
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 600px) {
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .dots {
+    bottom: 86px;
+  }
+}
