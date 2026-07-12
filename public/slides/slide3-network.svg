@@ -1,114 +1,116 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <linearGradient id="bg3" x1="0" y1="0" x2="0.7" y2="1">
-      <stop offset="0" stop-color="#F7FAFF"/>
-      <stop offset="0.55" stop-color="#EAF1FF"/>
-      <stop offset="1" stop-color="#DCE8FF"/>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#131A42"/>
+      <stop offset="0.55" stop-color="#22265E"/>
+      <stop offset="1" stop-color="#372A70"/>
     </linearGradient>
-    <linearGradient id="wave3a" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#6D8DF0"/>
-      <stop offset="0.6" stop-color="#7FB5FF"/>
-      <stop offset="1" stop-color="#5AD1C8"/>
-    </linearGradient>
-    <radialGradient id="glow3" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#BFD4FF" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#BFD4FF" stop-opacity="0"/>
+    <radialGradient id="orb3a" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6FB6FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#6FB6FF" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="aiText3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4F6EF7"/>
-      <stop offset="1" stop-color="#7C5CF0"/>
+    <radialGradient id="orb3b" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#9B6FE8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#9B6FE8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#AFE0FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#AFE0FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="linkLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6FB6FF" stop-opacity="0.15"/>
+      <stop offset="0.5" stop-color="#9FD8FF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#6FB6FF" stop-opacity="0.15"/>
     </linearGradient>
-    <filter id="soft3" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#3E5BC7" flood-opacity="0.16"/>
-    </filter>
+    <pattern id="dots3" width="46" height="46" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#FFFFFF" opacity="0.09"/>
+    </pattern>
   </defs>
 
   <rect width="1600" height="900" fill="url(#bg3)"/>
+  <rect width="1600" height="900" fill="url(#dots3)"/>
 
-  <!-- 점 연결 장식 -->
-  <g stroke="#9DB6F5" stroke-width="3" fill="none" opacity="0.7">
-    <path d="M1000 120 Q 1180 50 1360 110 T 1580 100"/>
-    <path d="M80 180 Q 240 110 400 160"/>
-  </g>
-  <g fill="#7C9BF0" opacity="0.85">
-    <circle cx="1000" cy="120" r="8"/>
-    <circle cx="1360" cy="110" r="10"/>
-    <circle cx="80" cy="180" r="7"/>
-    <circle cx="400" cy="160" r="8"/>
-  </g>
-  <circle cx="1500" cy="640" r="160" fill="#C9DBFF" opacity="0.4"/>
-  <circle cx="120" cy="620" r="130" fill="#CFE6FF" opacity="0.5"/>
+  <circle cx="300" cy="180" r="380" fill="url(#orb3a)"/>
+  <circle cx="1380" cy="700" r="420" fill="url(#orb3b)"/>
 
-  <!-- 반짝이 -->
+  <!-- 도시 실루엣 -->
+  <g fill="#0D1233">
+    <path d="M0 900 L 0 800 L 60 800 L 60 760 L 120 760 L 120 810 L 200 810 L 200 730 L 230 730 L 230 700 L 260 700 L 260 730 L 290 730 L 290 810 L 380 810 L 380 770 L 460 770 L 460 830 L 560 830 L 560 750 L 590 750 L 590 720 L 640 720 L 640 830 L 760 830 L 760 780 L 800 780 L 800 690 L 815 690 L 815 660 L 830 690 L 845 690 L 845 780 L 900 780 L 900 830 L 1020 830 L 1020 760 L 1100 760 L 1100 800 L 1180 800 L 1180 740 L 1230 740 L 1230 700 L 1270 700 L 1270 800 L 1360 800 L 1360 770 L 1440 770 L 1440 820 L 1520 820 L 1520 780 L 1600 780 L 1600 900 Z" opacity="0.9"/>
+  </g>
+  <g fill="#FFE9A0" opacity="0.5">
+    <rect x="212" y="745" width="6" height="6" rx="1"/>
+    <rect x="240" y="745" width="6" height="6" rx="1"/>
+    <rect x="572" y="765" width="6" height="6" rx="1"/>
+    <rect x="606" y="740" width="6" height="6" rx="1"/>
+    <rect x="1240" y="715" width="6" height="6" rx="1"/>
+    <rect x="808" y="705" width="5" height="5" rx="1"/>
+  </g>
+
+  <!-- 연결 별자리 -->
+  <g stroke="url(#linkLine)" stroke-width="1.8" fill="none">
+    <path d="M260 620 L 560 490"/>
+    <path d="M560 490 L 800 560"/>
+    <path d="M800 560 L 1060 460"/>
+    <path d="M1060 460 L 1340 580"/>
+    <path d="M260 620 Q 800 700 1340 580" opacity="0.35"/>
+  </g>
+
+  <!-- 기관 노드들 -->
   <g>
-    <path d="M700 160 l 6 15 l 15 6 l -15 6 l -6 15 l -6 -15 l -15 -6 l 15 -6 Z" fill="#FFC46B"/>
-    <path d="M1230 300 l 5 12 l 12 5 l -12 5 l -5 12 l -5 -12 l -12 -5 l 12 -5 Z" fill="#7EDCD6"/>
-    <path d="M350 340 l 4 11 l 11 4 l -11 4 l -4 11 l -4 -11 l -11 -4 l 11 -4 Z" fill="#B9A8FF"/>
-  </g>
-
-  <!-- 중앙 허브 -->
-  <g transform="translate(800,330)">
-    <circle cx="0" cy="0" r="210" fill="url(#glow3)"/>
-    <circle cx="0" cy="0" r="130" fill="none" stroke="#A8C0F8" stroke-width="2.5" stroke-dasharray="4 12"/>
-    <circle cx="0" cy="0" r="84" fill="#FFFFFF" filter="url(#soft3)"/>
-    <text x="0" y="-2" text-anchor="middle" font-size="46" font-weight="800" fill="url(#aiText3)">AI</text>
-    <text x="0" y="36" text-anchor="middle" font-size="24" font-weight="700" fill="#3D4C7E">선도기관</text>
-  </g>
-
-  <!-- 허브-기관 연결선 -->
-  <g stroke="#8FA8F5" stroke-width="3" fill="none" opacity="0.75" stroke-dasharray="1 12" stroke-linecap="round">
-    <path d="M800 420 Q 780 520 760 570"/>
-    <path d="M735 380 Q 500 480 400 540"/>
-    <path d="M865 380 Q 1100 480 1200 540"/>
-    <path d="M700 350 Q 350 380 190 480"/>
-    <path d="M900 350 Q 1250 380 1410 480"/>
-  </g>
-
-  <!-- 기관 노드 (집 모양) -->
-  <g>
-    <g transform="translate(190,540)">
-      <circle cx="0" cy="0" r="64" fill="#FFFFFF" filter="url(#soft3)"/>
-      <g stroke="#4F6EF7" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-26 -2 L 0 -26 L 26 -2"/>
-        <path d="M-18 -6 v 26 h 36 v -26"/>
-        <rect x="-6" y="6" width="12" height="14"/>
+    <g transform="translate(260,620)">
+      <circle cx="0" cy="0" r="56" fill="url(#nGlow)" opacity="0.65"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#CFE4FF" stroke-width="1.8"/>
+      <g stroke="#EAF4FF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-13 -1 L 0 -13 L 13 -1"/>
+        <path d="M-9 -3 v 13 h 18 v -13"/>
       </g>
     </g>
-    <g transform="translate(400,600)">
-      <circle cx="0" cy="0" r="64" fill="#FFFFFF" filter="url(#soft3)"/>
-      <g stroke="#5AA7E8" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-26 -2 L 0 -26 L 26 -2"/>
-        <path d="M-18 -6 v 26 h 36 v -26"/>
-        <rect x="-6" y="6" width="12" height="14"/>
+    <g transform="translate(560,490)">
+      <circle cx="0" cy="0" r="56" fill="url(#nGlow)" opacity="0.65"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#CFE4FF" stroke-width="1.8"/>
+      <g stroke="#EAF4FF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-13 -1 L 0 -13 L 13 -1"/>
+        <path d="M-9 -3 v 13 h 18 v -13"/>
       </g>
     </g>
-    <g transform="translate(760,640)">
-      <circle cx="0" cy="0" r="70" fill="#FFFFFF" filter="url(#soft3)"/>
-      <g stroke="#7C5CF0" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-28 -2 L 0 -28 L 28 -2"/>
-        <path d="M-20 -6 v 28 h 40 v -28"/>
-        <rect x="-7" y="7" width="14" height="15"/>
+    <g transform="translate(800,560)">
+      <circle cx="0" cy="0" r="56" fill="url(#nGlow)" opacity="0.65"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#CFE4FF" stroke-width="1.8"/>
+      <g stroke="#EAF4FF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-13 -1 L 0 -13 L 13 -1"/>
+        <path d="M-9 -3 v 13 h 18 v -13"/>
       </g>
     </g>
-    <g transform="translate(1200,600)">
-      <circle cx="0" cy="0" r="64" fill="#FFFFFF" filter="url(#soft3)"/>
-      <g stroke="#48B8A8" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-26 -2 L 0 -26 L 26 -2"/>
-        <path d="M-18 -6 v 26 h 36 v -26"/>
-        <rect x="-6" y="6" width="12" height="14"/>
+    <g transform="translate(1060,460)">
+      <circle cx="0" cy="0" r="56" fill="url(#nGlow)" opacity="0.65"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#CFE4FF" stroke-width="1.8"/>
+      <g stroke="#EAF4FF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-13 -1 L 0 -13 L 13 -1"/>
+        <path d="M-9 -3 v 13 h 18 v -13"/>
       </g>
     </g>
-    <g transform="translate(1410,540)">
-      <circle cx="0" cy="0" r="64" fill="#FFFFFF" filter="url(#soft3)"/>
-      <g stroke="#E8829B" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-26 -2 L 0 -26 L 26 -2"/>
-        <path d="M-18 -6 v 26 h 36 v -26"/>
-        <rect x="-6" y="6" width="12" height="14"/>
+    <g transform="translate(1340,580)">
+      <circle cx="0" cy="0" r="56" fill="url(#nGlow)" opacity="0.65"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#CFE4FF" stroke-width="1.8"/>
+      <g stroke="#EAF4FF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-13 -1 L 0 -13 L 13 -1"/>
+        <path d="M-9 -3 v 13 h 18 v -13"/>
       </g>
     </g>
   </g>
 
-  <!-- 아래 물결 -->
-  <path d="M0 780 Q 260 720 520 760 T 1040 750 T 1600 730 L 1600 900 L 0 900 Z" fill="#8FA8F5" opacity="0.35"/>
-  <path d="M0 830 Q 300 770 620 810 T 1180 800 T 1600 780 L 1600 900 L 0 900 Z" fill="url(#wave3a)" opacity="0.85"/>
+  <!-- 별 -->
+  <g fill="#FFFFFF">
+    <circle cx="150" cy="130" r="2.5" opacity="0.8"/>
+    <circle cx="420" cy="90" r="2" opacity="0.6"/>
+    <circle cx="680" cy="150" r="2.5" opacity="0.7"/>
+    <circle cx="1000" cy="100" r="2" opacity="0.6"/>
+    <circle cx="1240" cy="170" r="2.5" opacity="0.75"/>
+    <circle cx="1480" cy="120" r="2" opacity="0.6"/>
+    <circle cx="1160" cy="620" r="2.5" opacity="0.5"/>
+    <circle cx="480" cy="640" r="2" opacity="0.5"/>
+    <path d="M940 190 l 4 11 l 11 4 l -11 4 l -4 11 l -4 -11 l -11 -4 l 11 -4 Z" opacity="0.8"/>
+    <path d="M360 300 l 3 9 l 9 3 l -9 3 l -3 9 l -3 -9 l -9 -3 l 9 -3 Z" opacity="0.6"/>
+  </g>
 </svg>

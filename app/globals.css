@@ -208,14 +208,15 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: none;
-  background: rgba(30, 42, 90, 0.28);
+  border: 1px solid rgba(30, 42, 90, 0.3);
+  background: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   transition: transform 0.2s, background 0.2s;
 }
 
 .dot.active {
   background: #4f6ef7;
+  border-color: rgba(255, 255, 255, 0.7);
   transform: scale(1.25);
 }
 
@@ -379,6 +380,309 @@ body {
   margin-bottom: 12px;
 }
 
+/* ===== 영상 슬라이드 ===== */
+.slide-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #0c1230;
+}
+
+.sound-btn {
+  position: absolute;
+  top: 84px;
+  right: 20px;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.92);
+  border: none;
+  color: #26325e;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== 인사하는 뚜비 ===== */
+.ddubi {
+  display: block;
+  width: 150px;
+  margin: 14px auto 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 22px rgba(62, 91, 199, 0.12);
+  animation: ddubi-bob 2.6s ease-in-out infinite;
+}
+
+@keyframes ddubi-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.credit {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #aab4d4;
+}
+
+/* ===== 관리자 페이지 ===== */
+.admin {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+}
+
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: #fff;
+  padding: 40px 36px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(62, 91, 199, 0.12);
+  text-align: center;
+  width: min(90vw, 360px);
+}
+
+.login-box h1 {
+  font-size: 1.5rem;
+  color: #1e2a5a;
+}
+
+.login-box p {
+  margin: 10px 0 18px;
+  color: #718096;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #d4defa;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 13px;
+  background: #4f6ef7;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-box .msg {
+  color: #e53e3e;
+  margin-top: 12px;
+}
+
+.admin-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-top h1 {
+  font-size: 1.5rem;
+  color: #1e2a5a;
+}
+
+.admin-top-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.ghost-btn {
+  display: inline-block;
+  padding: 11px 18px;
+  border: 1.5px solid #c3d0f5;
+  border-radius: 12px;
+  color: #4f6ef7;
+  font-weight: 700;
+  text-decoration: none;
+  background: #fff;
+}
+
+.save-btn {
+  padding: 11px 22px;
+  background: #4f6ef7;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.save-btn:disabled {
+  opacity: 0.6;
+}
+
+.save-btn.big {
+  padding: 15px 44px;
+  font-size: 1.1rem;
+}
+
+.save-bottom {
+  text-align: center;
+  margin-top: 26px;
+}
+
+.admin-hint {
+  margin-top: 8px;
+  color: #718096;
+}
+
+.db-warn {
+  margin-top: 16px;
+  background: #fff6e5;
+  border: 1.5px solid #f6c66b;
+  color: #8a5a00;
+  padding: 14px 18px;
+  border-radius: 14px;
+  line-height: 1.6;
+}
+
+.admin-section {
+  margin-top: 34px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 18px rgba(62, 91, 199, 0.07);
+}
+
+.admin-section h2 {
+  font-size: 1.2rem;
+  color: #1e2a5a;
+}
+
+.section-hint {
+  margin: 6px 0 16px;
+  color: #718096;
+  font-size: 0.95rem;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-top: 1px solid #eef2fb;
+}
+
+.row-thumb {
+  flex: 0 0 92px;
+  height: 68px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eef2fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-thumb img,
+.row-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-empty {
+  font-size: 0.78rem;
+  color: #8b97bd;
+}
+
+.row-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.row-type {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4f6ef7;
+}
+
+.row-fields input {
+  width: 100%;
+  padding: 10px 13px;
+  border: 1.5px solid #dde5f8;
+  border-radius: 10px;
+  font-size: 0.98rem;
+}
+
+.row-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row-btns button {
+  padding: 7px 12px;
+  border: 1.5px solid #dde5f8;
+  background: #fff;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.row-btns .del {
+  color: #e53e3e;
+  border-color: #f5c6c6;
+}
+
+.add-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.add-btns button {
+  padding: 12px 20px;
+  border: 1.5px dashed #a8bcf5;
+  background: #f5f8ff;
+  color: #4f6ef7;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #26325e;
+  color: #fff;
+  padding: 13px 24px;
+  border-radius: 999px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.25);
+  z-index: 50;
+  max-width: 90vw;
+}
+
 @media (max-width: 600px) {
   .arrow {
     width: 40px;
@@ -388,5 +692,14 @@ body {
 
   .dots {
     bottom: 86px;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .row-btns {
+    flex-direction: row;
+    width: 100%;
   }
 }

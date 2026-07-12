@@ -1,169 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" font-family="'Pretendard Variable', Pretendard, 'Malgun Gothic', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0.7" y2="1">
-      <stop offset="0" stop-color="#F7FAFF"/>
-      <stop offset="0.55" stop-color="#EAF1FF"/>
-      <stop offset="1" stop-color="#DDE9FF"/>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10163A"/>
+      <stop offset="0.5" stop-color="#1C2456"/>
+      <stop offset="1" stop-color="#2E2A6E"/>
     </linearGradient>
-    <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#6D8DF0"/>
-      <stop offset="0.6" stop-color="#7FB5FF"/>
-      <stop offset="1" stop-color="#5AD1C8"/>
-    </linearGradient>
-    <linearGradient id="wave2" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#8FA8F5"/>
-      <stop offset="1" stop-color="#7EDCD6"/>
-    </linearGradient>
-    <radialGradient id="hubGlow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#BFD4FF" stop-opacity="0.9"/>
-      <stop offset="0.6" stop-color="#CFE0FF" stop-opacity="0.4"/>
-      <stop offset="1" stop-color="#CFE0FF" stop-opacity="0"/>
+    <radialGradient id="orbCyan" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3ED6E0" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#3ED6E0" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="aiText" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4F6EF7"/>
-      <stop offset="1" stop-color="#7C5CF0"/>
+    <radialGradient id="orbViolet" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8B6FE8" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#8B6FE8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbPink" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#E86FA8" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#E86FA8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nodeGlow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#9FD8FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#9FD8FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3ED6E0" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#6FB6FF" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#8B6FE8" stop-opacity="0"/>
     </linearGradient>
-    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#3E5BC7" flood-opacity="0.16"/>
-    </filter>
+    <pattern id="dots2" width="46" height="46" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#FFFFFF" opacity="0.10"/>
+    </pattern>
   </defs>
 
-  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <rect width="1600" height="900" fill="url(#dots2)"/>
 
-  <!-- 왼쪽 위 점 연결선 -->
-  <g stroke="#9DB6F5" stroke-width="3" fill="none" opacity="0.7">
-    <path d="M60 150 Q 220 60 380 130 T 700 110"/>
-    <path d="M120 260 Q 300 190 470 240"/>
+  <!-- 은은한 빛 덩어리 -->
+  <circle cx="220" cy="760" r="420" fill="url(#orbCyan)"/>
+  <circle cx="1420" cy="160" r="460" fill="url(#orbViolet)"/>
+  <circle cx="900" cy="880" r="330" fill="url(#orbPink)"/>
+
+  <!-- 흐르는 곡선 -->
+  <g fill="none">
+    <path d="M-50 640 C 350 520 700 720 1050 600 S 1500 480 1680 540" stroke="url(#sweep)" stroke-width="2.5"/>
+    <path d="M-50 700 C 380 590 720 780 1080 660 S 1520 540 1680 600" stroke="url(#sweep)" stroke-width="1.5" opacity="0.6"/>
   </g>
-  <g fill="#7C9BF0" opacity="0.85">
-    <circle cx="60" cy="150" r="8"/>
-    <circle cx="380" cy="130" r="10"/>
-    <circle cx="700" cy="110" r="7"/>
-    <circle cx="120" cy="260" r="6"/>
-    <circle cx="470" cy="240" r="8"/>
-  </g>
 
-  <!-- 부드러운 배경 원 -->
-  <circle cx="1520" cy="120" r="180" fill="#C9DBFF" opacity="0.45"/>
-  <circle cx="90" cy="760" r="150" fill="#CFE6FF" opacity="0.5"/>
+  <!-- 오른쪽 궤도 링 -->
+  <g transform="translate(1180,430)">
+    <circle cx="0" cy="0" r="150" fill="none" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="220" fill="none" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="295" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
 
-  <!-- AI 허브 (오른쪽) -->
-  <g transform="translate(1150,330)">
-    <circle cx="0" cy="0" r="250" fill="url(#hubGlow)"/>
-    <circle cx="0" cy="0" r="150" fill="none" stroke="#A8C0F8" stroke-width="2.5" stroke-dasharray="4 12"/>
-    <circle cx="0" cy="0" r="205" fill="none" stroke="#BCCEFA" stroke-width="2" stroke-dasharray="3 14" opacity="0.8"/>
-    <circle cx="0" cy="0" r="92" fill="#FFFFFF" filter="url(#soft)"/>
-    <text x="0" y="26" text-anchor="middle" font-size="72" font-weight="800" fill="url(#aiText)">AI</text>
-
-    <!-- 궤도 아이콘: 책 (맞춤 학습) -->
-    <g transform="translate(-150,-160)">
-      <circle cx="0" cy="0" r="46" fill="#FFFFFF" filter="url(#soft)"/>
-      <g stroke="#4F6EF7" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M0 -12 q -14 -10 -26 -4 l 0 30 q 12 -6 26 4 q 14 -10 26 -4 l 0 -30 q -12 -6 -26 4 Z"/>
-        <path d="M0 -12 L 0 18"/>
+    <!-- 중심 AI 칩 -->
+    <g>
+      <circle cx="0" cy="0" r="86" fill="url(#nodeGlow2)" opacity="0.55"/>
+      <rect x="-40" y="-40" width="80" height="80" rx="18" fill="none" stroke="#CFE4FF" stroke-width="2.5"/>
+      <rect x="-22" y="-22" width="44" height="44" rx="10" fill="none" stroke="#9FD8FF" stroke-width="2"/>
+      <g stroke="#CFE4FF" stroke-width="2.5" stroke-linecap="round">
+        <path d="M-14 -40 v -18 M 0 -40 v -18 M 14 -40 v -18"/>
+        <path d="M-14 40 v 18 M 0 40 v 18 M 14 40 v 18"/>
+        <path d="M-40 -14 h -18 M -40 0 h -18 M -40 14 h -18"/>
+        <path d="M40 -14 h 18 M 40 0 h 18 M 40 14 h 18"/>
       </g>
-      <text x="0" y="78" text-anchor="middle" font-size="22" font-weight="600" fill="#3D4C7E">맞춤 학습</text>
+      <text x="0" y="9" text-anchor="middle" font-size="30" font-weight="700" fill="#EAF4FF" font-family="Pretendard, sans-serif" letter-spacing="2">AI</text>
     </g>
 
-    <!-- 전구 (창의력) -->
-    <g transform="translate(110,-185)">
-      <circle cx="0" cy="0" r="46" fill="#FFFFFF" filter="url(#soft)"/>
-      <g stroke="#4F6EF7" stroke-width="4" fill="none" stroke-linecap="round">
-        <circle cx="0" cy="-6" r="14"/>
-        <path d="M-7 12 L 7 12 M -5 20 L 5 20"/>
-        <path d="M0 -32 L 0 -26 M 20 -20 L 16 -16 M -20 -20 L -16 -16"/>
-      </g>
-      <text x="0" y="78" text-anchor="middle" font-size="22" font-weight="600" fill="#3D4C7E">창의력</text>
-    </g>
-
-    <!-- 사람 (문제 해결력) -->
-    <g transform="translate(225,-60)">
-      <circle cx="0" cy="0" r="46" fill="#FFFFFF" filter="url(#soft)"/>
-      <g stroke="#4F6EF7" stroke-width="4" fill="none" stroke-linecap="round">
-        <circle cx="0" cy="-10" r="10"/>
-        <path d="M-16 18 q 0 -14 16 -14 q 16 0 16 14"/>
-      </g>
-      <text x="0" y="78" text-anchor="middle" font-size="22" font-weight="600" fill="#3D4C7E">문제 해결력</text>
-    </g>
-
-    <!-- 말풍선 (소통 능력) -->
-    <g transform="translate(185,110)">
-      <circle cx="0" cy="0" r="46" fill="#FFFFFF" filter="url(#soft)"/>
-      <g stroke="#4F6EF7" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-20 -14 h 40 a 6 6 0 0 1 6 6 v 18 a 6 6 0 0 1 -6 6 h -22 l -10 10 v -10 h -8 a 6 6 0 0 1 -6 -6 v -18 a 6 6 0 0 1 6 -6 Z"/>
-      </g>
-      <g fill="#4F6EF7">
-        <circle cx="-10" cy="1" r="2.6"/><circle cx="0" cy="1" r="2.6"/><circle cx="10" cy="1" r="2.6"/>
-      </g>
-      <text x="0" y="78" text-anchor="middle" font-size="22" font-weight="600" fill="#3D4C7E">소통 능력</text>
-    </g>
-
-    <!-- 그래프 (데이터 이해력) -->
-    <g transform="translate(-195,90)">
-      <circle cx="0" cy="0" r="46" fill="#FFFFFF" filter="url(#soft)"/>
-      <g stroke="#4F6EF7" stroke-width="4" fill="none" stroke-linecap="round">
-        <path d="M-18 18 L -18 2 M -6 18 L -6 -8 M 6 18 L 6 -2 M 18 18 L 18 -14"/>
-        <path d="M-18 -8 L 0 -16 L 18 -20" opacity="0.6"/>
-      </g>
-      <text x="0" y="78" text-anchor="middle" font-size="22" font-weight="600" fill="#3D4C7E">데이터 이해력</text>
-    </g>
-
-    <!-- 모니터 (디지털 리터러시) -->
-    <g transform="translate(-230,-40)">
-      <circle cx="0" cy="0" r="46" fill="#FFFFFF" filter="url(#soft)"/>
-      <g stroke="#4F6EF7" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="-20" y="-16" width="40" height="26" rx="4"/>
-        <path d="M-8 18 h 16 M 0 10 L 0 18"/>
-      </g>
-      <text x="0" y="78" text-anchor="middle" font-size="22" font-weight="600" fill="#3D4C7E">디지털 리터러시</text>
-    </g>
-
-    <!-- 허브-아이콘 연결선 -->
-    <g stroke="#B7C9F8" stroke-width="2.5" opacity="0.8">
-      <line x1="-64" y1="-68" x2="-118" y2="-126"/>
-      <line x1="47" y1="-79" x2="86" y2="-146"/>
-      <line x1="88" y1="-24" x2="180" y2="-48"/>
-      <line x1="76" y1="45" x2="146" y2="87"/>
-      <line x1="-84" y1="38" x2="-152" y2="70"/>
-      <line x1="-90" y1="-16" x2="-186" y2="-32"/>
+    <!-- 궤도 위 점들 -->
+    <g>
+      <circle cx="-150" cy="0" r="34" fill="url(#nodeGlow2)" opacity="0.8"/>
+      <circle cx="-150" cy="0" r="5" fill="#FFFFFF"/>
+      <circle cx="106" cy="-106" r="30" fill="url(#nodeGlow2)" opacity="0.7"/>
+      <circle cx="106" cy="-106" r="4.5" fill="#FFFFFF"/>
+      <circle cx="156" cy="156" r="26" fill="url(#nodeGlow2)" opacity="0.6"/>
+      <circle cx="156" cy="156" r="4" fill="#FFFFFF"/>
+      <circle cx="-208" cy="-208" r="4" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="0" cy="295" r="3.5" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="295" cy="0" r="3.5" fill="#FFFFFF" opacity="0.6"/>
     </g>
   </g>
 
-  <!-- 로봇 친구 (왼쪽 아래) -->
-  <g transform="translate(300,600)">
-    <ellipse cx="0" cy="150" rx="120" ry="22" fill="#3E5BC7" opacity="0.1"/>
-    <!-- 몸통 -->
-    <rect x="-70" y="10" width="140" height="120" rx="54" fill="#FFFFFF" filter="url(#soft)"/>
-    <circle cx="0" cy="62" r="26" fill="#EAF0FF"/>
-    <circle cx="0" cy="62" r="14" fill="#7C9BF0" opacity="0.65"/>
-    <!-- 팔 -->
-    <ellipse cx="-88" cy="55" rx="20" ry="34" fill="#FFFFFF" filter="url(#soft)"/>
-    <ellipse cx="88" cy="55" rx="20" ry="34" fill="#FFFFFF" filter="url(#soft)"/>
-    <!-- 머리 -->
-    <rect x="-84" y="-120" width="168" height="126" rx="60" fill="#FFFFFF" filter="url(#soft)"/>
-    <rect x="-62" y="-100" width="124" height="86" rx="42" fill="#2B3A67"/>
-    <ellipse cx="-26" cy="-57" rx="13" ry="17" fill="#69E4FF"/>
-    <ellipse cx="26" cy="-57" rx="13" ry="17" fill="#69E4FF"/>
-    <path d="M-12 -36 q 12 10 24 0" stroke="#69E4FF" stroke-width="4" fill="none" stroke-linecap="round"/>
-    <!-- 안테나/귀 -->
-    <circle cx="0" cy="-136" r="10" fill="#7C9BF0"/>
-    <rect x="-3" y="-132" width="6" height="14" fill="#7C9BF0"/>
-    <circle cx="-92" cy="-56" r="12" fill="#DCE6FF"/>
-    <circle cx="92" cy="-56" r="12" fill="#DCE6FF"/>
-    <!-- 하트 -->
-    <path d="M150 -60 c 8 -14 30 -8 26 8 c -3 12 -26 24 -26 24 c 0 0 -23 -12 -26 -24 c -4 -16 18 -22 26 -8 Z" fill="#FF9EB5"/>
+  <!-- 왼쪽 아래 가는 선 아이콘: 열린 책 + 전구 (배움과 아이디어) -->
+  <g transform="translate(240,640)" stroke="#BFD8FF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <path d="M0 0 q -30 -20 -58 -8 l 0 64 q 28 -12 58 8 q 30 -20 58 -8 l 0 -64 q -28 -12 -58 8 Z"/>
+    <path d="M0 0 L 0 64"/>
+  </g>
+  <g transform="translate(392,590)" stroke="#BFD8FF" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.85">
+    <circle cx="0" cy="0" r="20"/>
+    <path d="M-9 26 L 9 26 M -6 36 L 6 36"/>
+    <path d="M0 -36 L 0 -28 M 26 -26 L 21 -21 M -26 -26 L -21 -21 M 36 0 L 28 0 M -36 0 L -28 0"/>
   </g>
 
-  <!-- 떠다니는 작은 아이콘 -->
-  <g opacity="0.55" fill="#8FA8F5">
-    <path d="M640 210 l 26 12 l -26 12 l -26 -12 Z M 618 228 v 14 q 22 12 44 0 v -14" stroke="#8FA8F5" stroke-width="4" fill="none" stroke-linejoin="round"/>
-    <circle cx="880" cy="640" r="8"/>
-    <circle cx="560" cy="520" r="6"/>
-    <path d="M980 150 l 5 13 l 13 5 l -13 5 l -5 13 l -5 -13 l -13 -5 l 13 -5 Z" fill="#FFC46B"/>
-    <path d="M480 720 l 4 11 l 11 4 l -11 4 l -4 11 l -4 -11 l -11 -4 l 11 -4 Z" fill="#7EDCD6"/>
+  <!-- 반짝임 -->
+  <g fill="#FFFFFF">
+    <path d="M320 200 l 5 14 l 14 5 l -14 5 l -5 14 l -5 -14 l -14 -5 l 14 -5 Z" opacity="0.9"/>
+    <path d="M700 300 l 4 10 l 10 4 l -10 4 l -4 10 l -4 -10 l -10 -4 l 10 -4 Z" opacity="0.6"/>
+    <path d="M560 130 l 3 8 l 8 3 l -8 3 l -3 8 l -3 -8 l -8 -3 l 8 -3 Z" opacity="0.5"/>
+    <circle cx="140" cy="320" r="3" opacity="0.7"/>
+    <circle cx="860" cy="180" r="2.5" opacity="0.5"/>
+    <circle cx="620" cy="500" r="2.5" opacity="0.45"/>
+    <circle cx="1020" cy="720" r="3" opacity="0.5"/>
   </g>
-
-  <!-- 아래 물결 -->
-  <path d="M0 770 Q 260 700 520 750 T 1040 740 T 1600 720 L 1600 900 L 0 900 Z" fill="url(#wave2)" opacity="0.4"/>
-  <path d="M0 820 Q 300 750 620 800 T 1180 790 T 1600 770 L 1600 900 L 0 900 Z" fill="url(#wave1)" opacity="0.85"/>
 </svg>
