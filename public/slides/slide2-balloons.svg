@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BDE8FF"/>
+      <stop offset="0.6" stop-color="#8ED3FB"/>
+      <stop offset="1" stop-color="#6FC0F2"/>
+    </linearGradient>
+    <linearGradient id="bRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF9AA8"/><stop offset="1" stop-color="#F4636F"/>
+    </linearGradient>
+    <linearGradient id="bYellow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE59A"/><stop offset="1" stop-color="#F7B733"/>
+    </linearGradient>
+    <linearGradient id="bGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A8E6B8"/><stop offset="1" stop-color="#52B788"/>
+    </linearGradient>
+    <linearGradient id="bPurple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CBB7FF"/><stop offset="1" stop-color="#8B6FE8"/>
+    </linearGradient>
+    <linearGradient id="bBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9AD1FF"/><stop offset="1" stop-color="#4A90E2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky2)"/>
+
+  <!-- 무지개 -->
+  <g fill="none" stroke-linecap="round" opacity="0.85" transform="translate(800,980)">
+    <path d="M-620 0 A 620 620 0 0 1 620 0" stroke="#FF8B8B" stroke-width="34"/>
+    <path d="M-580 0 A 580 580 0 0 1 580 0" stroke="#FFC46B" stroke-width="34"/>
+    <path d="M-540 0 A 540 540 0 0 1 540 0" stroke="#FFE98A" stroke-width="34"/>
+    <path d="M-500 0 A 500 500 0 0 1 500 0" stroke="#93E29E" stroke-width="34"/>
+    <path d="M-460 0 A 460 460 0 0 1 460 0" stroke="#8FC9FF" stroke-width="34"/>
+    <path d="M-420 0 A 420 420 0 0 1 420 0" stroke="#C3A9FF" stroke-width="34"/>
+  </g>
+
+  <!-- 구름 -->
+  <g fill="#FFFFFF">
+    <g opacity="0.95">
+      <ellipse cx="260" cy="640" rx="150" ry="52"/>
+      <ellipse cx="360" cy="610" rx="100" ry="44"/>
+      <ellipse cx="170" cy="610" rx="86" ry="38"/>
+    </g>
+    <g opacity="0.95">
+      <ellipse cx="1340" cy="620" rx="160" ry="56"/>
+      <ellipse cx="1450" cy="590" rx="104" ry="46"/>
+      <ellipse cx="1240" cy="588" rx="90" ry="40"/>
+    </g>
+    <g opacity="0.85">
+      <ellipse cx="800" cy="760" rx="190" ry="60"/>
+      <ellipse cx="930" cy="730" rx="120" ry="50"/>
+      <ellipse cx="680" cy="726" rx="104" ry="44"/>
+    </g>
+    <g opacity="0.7">
+      <ellipse cx="560" cy="150" rx="100" ry="34"/>
+      <ellipse cx="630" cy="132" rx="66" ry="28"/>
+    </g>
+  </g>
+
+  <!-- 풍선들 -->
+  <g>
+    <g transform="translate(320,320)">
+      <path d="M0 96 q -10 40 0 84" stroke="#B65A63" stroke-width="5" fill="none"/>
+      <ellipse cx="0" cy="0" rx="74" ry="90" fill="url(#bRed)"/>
+      <path d="M-14 92 L 14 92 L 0 112 Z" fill="#F4636F"/>
+      <ellipse cx="-24" cy="-30" rx="18" ry="28" fill="#FFFFFF" opacity="0.45"/>
+    </g>
+    <g transform="translate(520,210) scale(0.8)">
+      <path d="M0 96 q 12 44 0 88" stroke="#B98A28" stroke-width="5" fill="none"/>
+      <ellipse cx="0" cy="0" rx="74" ry="90" fill="url(#bYellow)"/>
+      <path d="M-14 92 L 14 92 L 0 112 Z" fill="#F7B733"/>
+      <ellipse cx="-24" cy="-30" rx="18" ry="28" fill="#FFFFFF" opacity="0.5"/>
+    </g>
+    <g transform="translate(1120,260) scale(0.9)">
+      <path d="M0 96 q -12 44 0 88" stroke="#3E8763" stroke-width="5" fill="none"/>
+      <ellipse cx="0" cy="0" rx="74" ry="90" fill="url(#bGreen)"/>
+      <path d="M-14 92 L 14 92 L 0 112 Z" fill="#52B788"/>
+      <ellipse cx="-24" cy="-30" rx="18" ry="28" fill="#FFFFFF" opacity="0.5"/>
+    </g>
+    <g transform="translate(1310,380) scale(0.72)">
+      <path d="M0 96 q 10 44 0 88" stroke="#6650B5" stroke-width="6" fill="none"/>
+      <ellipse cx="0" cy="0" rx="74" ry="90" fill="url(#bPurple)"/>
+      <path d="M-14 92 L 14 92 L 0 112 Z" fill="#8B6FE8"/>
+      <ellipse cx="-24" cy="-30" rx="18" ry="28" fill="#FFFFFF" opacity="0.5"/>
+    </g>
+    <g transform="translate(180,180) scale(0.6)">
+      <path d="M0 96 q -10 44 0 88" stroke="#33689F" stroke-width="7" fill="none"/>
+      <ellipse cx="0" cy="0" rx="74" ry="90" fill="url(#bBlue)"/>
+      <path d="M-14 92 L 14 92 L 0 112 Z" fill="#4A90E2"/>
+      <ellipse cx="-24" cy="-30" rx="18" ry="28" fill="#FFFFFF" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- 연 -->
+  <g transform="translate(1000,140) rotate(18)">
+    <path d="M0 -64 L 44 0 L 0 64 L -44 0 Z" fill="#FF8FAB"/>
+    <path d="M0 -64 L 44 0 L 0 0 Z" fill="#FFB3C6"/>
+    <path d="M0 64 q 30 40 10 84 q 24 -6 30 18" stroke="#E76F8E" stroke-width="5" fill="none"/>
+    <path d="M0 -64 L 0 64 M -44 0 L 44 0" stroke="#D9576F" stroke-width="4"/>
+  </g>
+
+  <!-- 색종이 조각 -->
+  <g opacity="0.85">
+    <circle cx="700" cy="260" r="10" fill="#FFD166"/>
+    <circle cx="880" cy="420" r="8" fill="#FF8FAB"/>
+    <circle cx="1220" cy="140" r="9" fill="#8FC9FF"/>
+    <circle cx="420" cy="500" r="8" fill="#93E29E"/>
+    <rect x="960" y="540" width="16" height="16" rx="4" fill="#C3A9FF" transform="rotate(20 968 548)"/>
+    <rect x="600" y="420" width="14" height="14" rx="4" fill="#FFC46B" transform="rotate(-16 607 427)"/>
+    <rect x="1420" y="200" width="15" height="15" rx="4" fill="#FF8B8B" transform="rotate(30 1427 207)"/>
+  </g>
+</svg>

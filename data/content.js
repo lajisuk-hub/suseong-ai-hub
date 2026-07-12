@@ -9,19 +9,19 @@
 // 사진은 public/slides 폴더에 넣고 "/slides/파일명.jpg" 처럼 씁니다.
 export const slides = [
   {
-    image: null,
+    image: "/slides/slide1-sunrise.svg",
     title: "수성구 AI선도기관",
     subtitle: "함께 성장하는 우리 기관들을 소개합니다",
     bg: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   },
   {
-    image: null,
+    image: "/slides/slide2-balloons.svg",
     title: "아이들과 함께하는 AI 교육",
     subtitle: "미래를 준비하는 즐거운 배움",
     bg: "linear-gradient(135deg, #f6ad55 0%, #ed64a6 100%)",
   },
   {
-    image: null,
+    image: "/slides/slide3-network.svg",
     title: "참여기관을 눌러보세요",
     subtitle: "아래로 내리면 각 기관 홈페이지로 갈 수 있어요",
     bg: "linear-gradient(135deg, #38b2ac 0%, #4299e1 100%)",

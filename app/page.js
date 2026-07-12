@@ -39,12 +39,15 @@ export default function Home() {
           <div
             key={i}
             className={`slide ${i === current ? "active" : ""}`}
-            style={
-              slide.image
-                ? { backgroundImage: `url(${slide.image})` }
-                : { background: slide.bg }
-            }
           >
+            <div
+              className="slide-bg"
+              style={
+                slide.image
+                  ? { backgroundImage: `url(${slide.image})` }
+                  : { background: slide.bg }
+              }
+            />
             <div className="slide-overlay" />
             <div className="slide-text">
               <h1>{slide.title}</h1>
@@ -88,7 +91,7 @@ export default function Home() {
             const inner = (
               <>
                 <div
-                  className="card-img"
+                  className={`card-img ${org.image ? "" : "deco"}`}
                   style={
                     org.image
                       ? { backgroundImage: `url(${org.image})` }

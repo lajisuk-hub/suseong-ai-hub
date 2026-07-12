@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#5B6BD5"/>
+      <stop offset="0.55" stop-color="#6C5BC9"/>
+      <stop offset="1" stop-color="#4A3E9E"/>
+    </linearGradient>
+    <radialGradient id="nodeGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="0.4" stop-color="#FFE9A0" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#FFE9A0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFF7D6" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#FFF7D6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#night)"/>
+
+  <!-- 별 -->
+  <g fill="#FFFFFF">
+    <circle cx="120" cy="120" r="3.5" opacity="0.9"/>
+    <circle cx="300" cy="80" r="2.5" opacity="0.7"/>
+    <circle cx="480" cy="160" r="3" opacity="0.8"/>
+    <circle cx="700" cy="90" r="2.5" opacity="0.65"/>
+    <circle cx="920" cy="150" r="3.5" opacity="0.9"/>
+    <circle cx="1120" cy="70" r="2.5" opacity="0.7"/>
+    <circle cx="1330" cy="140" r="3" opacity="0.8"/>
+    <circle cx="1500" cy="90" r="2.5" opacity="0.7"/>
+    <circle cx="200" cy="300" r="2.5" opacity="0.6"/>
+    <circle cx="1450" cy="300" r="2.5" opacity="0.6"/>
+    <circle cx="80" cy="500" r="2.5" opacity="0.5"/>
+    <circle cx="1540" cy="520" r="2.5" opacity="0.55"/>
+    <circle cx="620" cy="250" r="2" opacity="0.5"/>
+    <circle cx="1050" cy="280" r="2" opacity="0.5"/>
+  </g>
+
+  <!-- 반짝이 별 (십자) -->
+  <g fill="#FFF3C9" opacity="0.95">
+    <path d="M390 210 l 6 16 l 16 6 l -16 6 l -6 16 l -6 -16 l -16 -6 l 16 -6 Z"/>
+    <path d="M1230 210 l 5 14 l 14 5 l -14 5 l -5 14 l -5 -14 l -14 -5 l 14 -5 Z"/>
+    <path d="M810 60 l 5 14 l 14 5 l -14 5 l -5 14 l -5 -14 l -14 -5 l 14 -5 Z"/>
+  </g>
+
+  <!-- 달 -->
+  <g transform="translate(1360,180)">
+    <circle cx="0" cy="0" r="130" fill="url(#moonGlow)"/>
+    <circle cx="0" cy="0" r="62" fill="#FFF3C9"/>
+    <circle cx="22" cy="-14" r="48" fill="#6C5BC9" opacity="0"/>
+    <circle cx="-16" cy="8" r="10" fill="#F2E2A8"/>
+    <circle cx="18" cy="-18" r="7" fill="#F2E2A8"/>
+    <circle cx="12" cy="24" r="6" fill="#F2E2A8"/>
+  </g>
+
+  <!-- 연결선 -->
+  <g stroke="#FFE9A0" stroke-width="3" opacity="0.55" fill="none" stroke-dasharray="2 10" stroke-linecap="round">
+    <path d="M330 620 Q 500 480 680 560"/>
+    <path d="M680 560 Q 820 620 960 520"/>
+    <path d="M960 520 Q 1120 420 1280 540"/>
+    <path d="M330 620 Q 560 720 800 700 Q 1060 680 1280 540"/>
+    <path d="M680 560 Q 700 420 800 360"/>
+    <path d="M960 520 Q 900 430 800 360"/>
+  </g>
+
+  <!-- 중심 노드: 큰 별 (AI선도기관) -->
+  <g transform="translate(800,360)">
+    <circle cx="0" cy="0" r="120" fill="url(#nodeGlow)"/>
+    <path d="M0 -58 L 16 -18 L 58 -14 L 26 14 L 36 56 L 0 32 L -36 56 L -26 14 L -58 -14 L -16 -18 Z" fill="#FFD976"/>
+  </g>
+
+  <!-- 기관 노드들: 작은 집 모양 -->
+  <g>
+    <g transform="translate(330,620)">
+      <circle cx="0" cy="0" r="86" fill="url(#nodeGlow)"/>
+      <rect x="-34" y="-8" width="68" height="44" rx="8" fill="#FFF6E8"/>
+      <path d="M-44 -4 L 0 -40 L 44 -4 Z" fill="#FF9E7D"/>
+      <rect x="-10" y="12" width="20" height="24" rx="4" fill="#C98850"/>
+    </g>
+    <g transform="translate(680,560) scale(0.9)">
+      <circle cx="0" cy="0" r="86" fill="url(#nodeGlow)"/>
+      <rect x="-34" y="-8" width="68" height="44" rx="8" fill="#FFF6E8"/>
+      <path d="M-44 -4 L 0 -40 L 44 -4 Z" fill="#8FC9FF"/>
+      <rect x="-10" y="12" width="20" height="24" rx="4" fill="#C98850"/>
+    </g>
+    <g transform="translate(960,520) scale(0.95)">
+      <circle cx="0" cy="0" r="86" fill="url(#nodeGlow)"/>
+      <rect x="-34" y="-8" width="68" height="44" rx="8" fill="#FFF6E8"/>
+      <path d="M-44 -4 L 0 -40 L 44 -4 Z" fill="#93E29E"/>
+      <rect x="-10" y="12" width="20" height="24" rx="4" fill="#C98850"/>
+    </g>
+    <g transform="translate(1280,540)">
+      <circle cx="0" cy="0" r="86" fill="url(#nodeGlow)"/>
+      <rect x="-34" y="-8" width="68" height="44" rx="8" fill="#FFF6E8"/>
+      <path d="M-44 -4 L 0 -40 L 44 -4 Z" fill="#C3A9FF"/>
+      <rect x="-10" y="12" width="20" height="24" rx="4" fill="#C98850"/>
+    </g>
+  </g>
+
+  <!-- 아래 언덕 실루엣 -->
+  <path d="M0 780 Q 400 700 800 760 T 1600 740 L 1600 900 L 0 900 Z" fill="#3A3080" opacity="0.85"/>
+  <path d="M0 840 Q 500 780 1000 830 T 1600 820 L 1600 900 L 0 900 Z" fill="#2E2668"/>
+</svg>

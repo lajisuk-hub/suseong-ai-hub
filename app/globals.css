@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +11,8 @@ html {
 }
 
 body {
-  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-family: "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
   color: #2d3748;
   background: #fdfdfd;
 }
@@ -25,13 +28,12 @@ body {
 .slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
   opacity: 0;
-  transition: opacity 0.9s ease;
+  transition: opacity 1s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .slide.active {
@@ -39,18 +41,64 @@ body {
   z-index: 1;
 }
 
+.slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide.active .slide-bg {
+  animation: kenburns 9s ease-out forwards;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
 .slide-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.18);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.06) 55%,
+    rgba(0, 0, 0, 0.28)
+  );
 }
 
 .slide-text {
   position: relative;
   text-align: center;
   color: #fff;
-  padding: 0 24px;
+  padding: 26px 44px;
+  border-radius: 24px;
+  background: rgba(30, 25, 60, 0.32);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.16);
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  max-width: min(88vw, 760px);
+}
+
+.slide.active .slide-text {
+  animation: rise 0.9s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .slide-text h1 {
@@ -211,12 +259,25 @@ body {
 }
 
 .card-img {
+  position: relative;
   height: 150px;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.card-img.deco::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.35) 0 44px, transparent 45px),
+    radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.25) 0 30px, transparent 31px),
+    radial-gradient(circle at 78% 82%, rgba(255, 255, 255, 0.22) 0 52px, transparent 53px),
+    radial-gradient(circle at 8% 88%, rgba(255, 255, 255, 0.18) 0 26px, transparent 27px);
 }
 
 .card-emoji {
