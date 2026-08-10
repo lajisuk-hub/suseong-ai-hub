@@ -113,8 +113,8 @@ export const organizations = [
 // 이 값들은 관리자 페이지(/admin)에서 바꿀 수 있습니다.
 export const ddubi = {
   enabled: true,
-  url: "https://www.suseong.kr/ddubi/index.do",
-  label: "수성구 캐릭터 뚜비 만나러 가기",
+  url: "https://www.suseong.kr/",
+  label: "수성구청",
 };
 
 // 홈페이지 제목/설명 (검색될 때 보이는 이름)
