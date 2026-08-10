@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import {
   slides as defaultSlides,
   organizations as defaultOrgs,
+  ddubi as defaultDdubi,
 } from "../../data/content";
 import {
   loadContent,
@@ -23,6 +24,7 @@ export default function Admin() {
   const [pw, setPw] = useState("");
   const [orgs, setOrgs] = useState([]);
   const [slides, setSlides] = useState([]);
+  const [ddubi, setDdubi] = useState(defaultDdubi);
   const [msg, setMsg] = useState("");
   const [busy, setBusy] = useState(false);
   const [dbError, setDbError] = useState(false);
@@ -50,6 +52,7 @@ export default function Admin() {
           ? content.slides
           : defaultSlides
       );
+      setDdubi(content && content.ddubi ? content.ddubi : defaultDdubi);
     });
   }, [authed]);
 
@@ -169,7 +172,7 @@ export default function Admin() {
       return;
     }
     setBusy(true);
-    const error = await saveContent({ orgs, slides });
+    const error = await saveContent({ orgs, slides, ddubi });
     setBusy(false);
     if (error) {
       setDbError(true);
@@ -330,6 +333,45 @@ export default function Admin() {
           <button onClick={() => setOrgs([...orgs, newOrg()])}>
             ＋ 기관 추가
           </button>
+        </div>
+      </section>
+
+      {/* ===== 돌아다니는 뚜비 관리 ===== */}
+      <section className="admin-section">
+        <h2>3. 돌아다니는 뚜비 🐢</h2>
+        <p className="section-hint">
+          화면을 자유롭게 떠다니는 뚜비예요. 방문하신 분이 뚜비를 누르면 아래에
+          적은 홈페이지가 새 창으로 열립니다.
+        </p>
+        <div className="ddubi-admin">
+          <label className="ddubi-toggle">
+            <input
+              type="checkbox"
+              checked={!!ddubi.enabled}
+              onChange={(e) =>
+                setDdubi({ ...ddubi, enabled: e.target.checked })
+              }
+            />
+            <span>돌아다니는 뚜비 보이기</span>
+          </label>
+
+          <label className="ddubi-field">
+            <span>누르면 열릴 주소 (수성구 관련 홈페이지)</span>
+            <input
+              value={ddubi.url || ""}
+              placeholder="https://www.suseong.kr"
+              onChange={(e) => setDdubi({ ...ddubi, url: e.target.value })}
+            />
+          </label>
+
+          <label className="ddubi-field">
+            <span>안내 문구 (뚜비에 마우스를 올리면 나와요)</span>
+            <input
+              value={ddubi.label || ""}
+              placeholder="수성구청 홈페이지 바로가기"
+              onChange={(e) => setDdubi({ ...ddubi, label: e.target.value })}
+            />
+          </label>
         </div>
       </section>
 

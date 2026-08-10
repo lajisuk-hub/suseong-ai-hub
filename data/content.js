@@ -98,6 +98,17 @@ export const organizations = [
   },
 ];
 
+// 화면을 자유롭게 돌아다니는 뚜비 설정입니다.
+// - enabled: false 로 하면 돌아다니는 뚜비를 숨깁니다
+// - url: 뚜비를 누르면 새 창으로 열리는 수성구 관련 홈페이지 주소
+// - label: 뚜비에 마우스를 올리면 나오는 안내 문구
+// 이 값들은 관리자 페이지(/admin)에서 바꿀 수 있습니다.
+export const ddubi = {
+  enabled: true,
+  url: "https://www.suseong.kr",
+  label: "수성구청 홈페이지 바로가기",
+};
+
 // 홈페이지 제목/설명 (검색될 때 보이는 이름)
 export const siteInfo = {
   title: "수성구 AI선도기관",

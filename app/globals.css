@@ -431,6 +431,78 @@ body {
   color: #aab4d4;
 }
 
+/* ===== 자유롭게 돌아다니는 뚜비 ===== */
+.ddubi-float {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  width: 88px;
+  height: 88px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.ddubi-float img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(62, 91, 199, 0.3);
+  animation: ddubi-wobble 2.2s ease-in-out infinite;
+  transition: transform 0.15s ease;
+}
+
+.ddubi-float:hover img {
+  transform: scale(1.12);
+  animation-play-state: paused;
+}
+
+@keyframes ddubi-wobble {
+  0%, 100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+.ddubi-float-tip {
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #2e2a6e;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.ddubi-float:hover .ddubi-float-tip {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .ddubi-float {
+    width: 62px;
+    height: 62px;
+  }
+  .ddubi-float-tip {
+    font-size: 0.72rem;
+  }
+}
+
 /* ===== 관리자 페이지 ===== */
 .admin {
   max-width: 860px;
@@ -624,6 +696,48 @@ body {
 }
 
 .row-fields input {
+  width: 100%;
+  padding: 10px 13px;
+  border: 1.5px solid #dde5f8;
+  border-radius: 10px;
+  font-size: 0.98rem;
+}
+
+/* 돌아다니는 뚜비 설정칸 */
+.ddubi-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ddubi-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #2e2a6e;
+  cursor: pointer;
+}
+
+.ddubi-toggle input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.ddubi-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ddubi-field span {
+  font-size: 0.92rem;
+  color: #4a5578;
+  font-weight: 600;
+}
+
+.ddubi-field input {
   width: 100%;
   padding: 10px 13px;
   border: 1.5px solid #dde5f8;

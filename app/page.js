@@ -4,9 +4,11 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import {
   slides as defaultSlides,
   organizations as defaultOrgs,
+  ddubi as defaultDdubi,
   siteInfo,
 } from "../data/content";
 import { loadContent } from "../lib/supabase";
+import FloatingDdubi from "./FloatingDdubi";
 
 // 관리자에서 만든 기관에 사진이 없을 때 쓰는 기본 색/그림문자
 const FALLBACK_STYLES = [
@@ -21,6 +23,7 @@ const FALLBACK_STYLES = [
 export default function Home() {
   const [slides, setSlides] = useState(defaultSlides);
   const [orgs, setOrgs] = useState(defaultOrgs);
+  const [ddubi, setDdubi] = useState(defaultDdubi);
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const [muted, setMuted] = useState(true);
@@ -35,6 +38,9 @@ export default function Home() {
         }
         if (Array.isArray(content.orgs) && content.orgs.length > 0) {
           setOrgs(content.orgs);
+        }
+        if (content.ddubi) {
+          setDdubi(content.ddubi);
         }
       }
     });
@@ -242,6 +248,11 @@ export default function Home() {
         <p>{siteInfo.footer}</p>
         <p className="credit">캐릭터 &lsquo;뚜비&rsquo; ⓒ 대구광역시 수성구청</p>
       </footer>
+
+      {/* ===== 자유롭게 돌아다니는 뚜비 (누르면 수성구 홈페이지로) ===== */}
+      {ddubi && ddubi.enabled && ddubi.url && (
+        <FloatingDdubi url={ddubi.url} label={ddubi.label} />
+      )}
     </main>
   );
 }
