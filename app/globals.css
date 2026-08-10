@@ -437,8 +437,8 @@ body {
   top: 0;
   left: 0;
   z-index: 60;
-  width: 88px;
-  height: 88px;
+  width: 140px;
+  height: 156px;
   padding: 0;
   border: none;
   background: transparent;
@@ -451,24 +451,12 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(62, 91, 199, 0.3);
-  animation: ddubi-wobble 2.2s ease-in-out infinite;
+  filter: drop-shadow(0 5px 6px rgba(62, 91, 199, 0.35));
   transition: transform 0.15s ease;
 }
 
 .ddubi-float:hover img {
-  transform: scale(1.12);
-  animation-play-state: paused;
-}
-
-@keyframes ddubi-wobble {
-  0%, 100% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(4deg);
-  }
+  transform: scale(1.1);
 }
 
 .ddubi-float-tip {
@@ -495,8 +483,8 @@ body {
 
 @media (max-width: 600px) {
   .ddubi-float {
-    width: 62px;
-    height: 62px;
+    width: 100px;
+    height: 112px;
   }
   .ddubi-float-tip {
     font-size: 0.72rem;
