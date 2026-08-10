@@ -49,6 +49,14 @@ export const slides = [
 // 사진이 없으면 emoji(그림문자)와 색 배경으로 나옵니다.
 export const organizations = [
   {
+    name: "수성구육아종합지원센터",
+    desc: "부모교육 · 양육상담 · 보육지원",
+    url: "https://www.suseong.kr/",
+    image: null,
+    emoji: "👶",
+    color: "linear-gradient(135deg, #F6A96B, #F58A8A)",
+  },
+  {
     name: "멘토어린이집",
     desc: "수성구 AI선도기관",
     url: "https://mentor-homepage.vercel.app",
