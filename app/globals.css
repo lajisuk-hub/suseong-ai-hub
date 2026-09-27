@@ -381,8 +381,8 @@ body {
 }
 
 /* ===== 영상 슬라이드 =====
-   영상은 어떤 화면에서도 잘리지 않게 통째로 보여주고(object-fit: contain),
-   위 로고 띠(72px)와 아래 점·단추 자리(120px)를 비워 둔다. 남는 여백은 영상과 같은 남색 그라데이션. */
+   위 로고 띠(72px) 아래부터 화면을 꽉 채운다(object-fit: cover, 위아래 약 10%가 잘릴 수 있어
+   영상 쪽에서 글자·사진을 안쪽으로 모아 두었음). 세로로 긴 화면(휴대폰)은 통째로 보여줌. */
 .slide:has(> .slide-video) {
   background: linear-gradient(135deg, #0f1538 0%, #1c1f5c 55%, #3b2f7a 100%);
 }
@@ -392,15 +392,21 @@ body {
   left: 0;
   top: 72px;
   width: 100%;
-  height: calc(100% - 72px - 120px);
-  object-fit: contain;
+  height: calc(100% - 72px);
+  object-fit: cover;
   background: transparent;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .slide-video {
+    object-fit: contain;
+  }
 }
 
 @media (max-width: 600px) {
   .slide-video {
     top: 64px;
-    height: calc(100% - 64px - 110px);
+    height: calc(100% - 64px);
   }
 }
 

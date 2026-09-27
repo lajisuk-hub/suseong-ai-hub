@@ -30,7 +30,8 @@
   #bg .star{fill:#fff}
   #bg .glow{fill:#9fc4ff;filter:drop-shadow(0 0 10px #9fc4ff)}
 
-  .scene{position:absolute;inset:0;padding:120px 150px;display:none;overflow:hidden}
+  /* 장면 내용은 0.9배로 안쪽에 모아(홈페이지에서 위아래 10%가 잘려도 글자·사진이 안 잘리게), 배경 사진은 엔진에서 1/0.9로 되돌려 화면을 꽉 채움 */
+  .scene{position:absolute;inset:0;padding:120px 150px;display:none;overflow:visible;transform:scale(.9);transform-origin:50% 50%}
   .scene.on{display:block}
   .center{text-align:center}
   .tag{display:inline-block;font-family:var(--sans);font-weight:600;font-size:30px;letter-spacing:.08em;color:var(--sky);
@@ -285,7 +286,7 @@
           case 'pop': el.style.opacity=p; el.style.transform=(el.dataset.rot||'')+` scale(${0.7+0.3*back(p)})`; break;
           case 'stamp': el.style.opacity=clamp(p/0.35); el.style.transform=`scale(${1.9-0.9*e})`; break;
           case 'grow': el.style.opacity=1; el.style.transform=`scaleX(${easeOut(clamp((lt-it.off)/2.2))})`; break;
-          case 'bgphoto': { const q=clamp(lt/1.2); el.style.opacity=q; el.style.transform=`scale(${1+0.06*(lt/s.dur)})`; break; }
+          case 'bgphoto': { const q=clamp(lt/1.2); el.style.opacity=q; el.style.transform=`scale(${(1+0.06*(lt/s.dur))/0.9})`; break; }
           case 'sprite': { el.style.opacity=p; const f=1+Math.floor((lt-it.off)*10)%8; el.style.backgroundImage=`url('../../public/ddubi/hop${lt<it.off?1:f}.png')`; break; }
           case 'float2': { el.style.opacity=p; const y=Math.sin((lt-it.off)*4)*10; el.style.display='inline-block'; el.style.transform=`translateY(${y}px)`; break; }
           default: el.style.opacity=p; el.style.transform=`translateY(${(1-e)*34}px)`;
