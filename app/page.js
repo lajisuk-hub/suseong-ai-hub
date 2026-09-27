@@ -89,7 +89,7 @@ export default function Home() {
     <main>
       {/* ===== 위쪽 로고 띠 ===== */}
       <header className="site-header">
-        <img src="/logo-suseong.png" alt="대구광역시 수성구" className="header-logo" />
+        <img src="/logo-suseong-white.png" alt="대구광역시 수성구" className="header-logo" />
         <span className="header-title">AI선도기관</span>
         <a
           className="header-center"
@@ -99,7 +99,7 @@ export default function Home() {
           title="대구광역시 수성구 육아종합지원센터 홈페이지"
         >
           <img
-            src="/logo-childcare.png"
+            src="/logo-childcare-white.png"
             alt="대구광역시 수성구 육아종합지원센터"
             className="header-center-logo"
           />
