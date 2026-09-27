@@ -91,6 +91,19 @@ export default function Home() {
       <header className="site-header">
         <img src="/logo-suseong.png" alt="대구광역시 수성구" className="header-logo" />
         <span className="header-title">AI선도기관</span>
+        <a
+          className="header-center"
+          href="https://www.suseong.kr/childcare/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="대구광역시 수성구 육아종합지원센터 홈페이지"
+        >
+          <img
+            src="/logo-childcare.png"
+            alt="대구광역시 수성구 육아종합지원센터"
+            className="header-center-logo"
+          />
+        </a>
       </header>
 
       {/* ===== 맨 위 큰 슬라이드 ===== */}

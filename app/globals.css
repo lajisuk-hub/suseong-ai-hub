@@ -39,6 +39,34 @@ body {
   width: auto;
 }
 
+/* 오른쪽 끝: 육아종합지원센터 로고 (누르면 센터 홈페이지) */
+.header-center {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  opacity: 0.95;
+}
+
+.header-center-logo {
+  height: 34px;
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    gap: 10px;
+    padding: 12px 14px;
+  }
+  .header-title {
+    white-space: nowrap;
+    font-size: 1.05rem;
+    padding-left: 10px;
+  }
+  .header-center-logo {
+    height: 22px;
+  }
+}
+
 .header-title {
   font-size: 1.25rem;
   font-weight: 800;
