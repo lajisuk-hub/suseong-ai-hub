@@ -390,8 +390,8 @@ body {
   background: #0f1538;
 }
 
-/* 휴대폰 세로 화면: 16:9 영상을 잘라내지 않고 통째로 보여줌 (남는 위아래는 영상과 같은 남색) */
-@media (max-aspect-ratio: 1/1) {
+/* 16:9보다 좁은 창(휴대폰·태블릿·좁은 창): 영상을 잘라내지 않고 통째로 보여줌 (남는 위아래는 영상과 같은 남색) */
+@media (max-aspect-ratio: 16/9) {
   .slide-video {
     object-fit: contain;
   }
