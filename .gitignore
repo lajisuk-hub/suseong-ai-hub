@@ -5,3 +5,6 @@ out/
 .env*.local
 .DS_Store
 npm-debug.log*
+promo/reel/photos/
+promo/reel/src/
+promo/reel/out/

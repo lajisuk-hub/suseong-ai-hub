@@ -112,6 +112,7 @@ export default function Home() {
                   ref={(el) => (videoRefs.current[i] = el)}
                   className="slide-video"
                   src={slide.video}
+                  poster={slide.poster || undefined}
                   muted={muted}
                   playsInline
                   preload="auto"

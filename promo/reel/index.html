@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>2026 수성구 AI 영유아 선도기관 – 소개 영상(16:9)</title>
+<meta name="viewport" content="width=1920">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  @font-face{font-family:'SuseongDotum';src:url('fonts/SuseongDotum.woff2') format('woff2');font-display:block}
+  @font-face{font-family:'SuseongBatang';src:url('fonts/SuseongBatang.woff2') format('woff2');font-display:block}
+  :root{
+    --navy:#0f1538; --navy2:#1c1f5c; --violet:#3b2f7a;
+    --ink:#ffffff; --soft:#c9d3f5; --sky:#8fb8ff; --lav:#b9a8ff; --mint:#7fe3d3; --gold:#ffd27a; --coral:#ff9b8a;
+    --head:'SuseongDotum','Pretendard',sans-serif; --body:'SuseongBatang','Pretendard',serif; --sans:'Pretendard',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000;width:100%;height:100%}
+  body{font-family:var(--body);color:var(--ink);-webkit-font-smoothing:antialiased}
+  #stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--navy);margin:0 auto}
+  body.preview #stage{transform-origin:top left}
+
+  /* ===== 공통 배경: 남색 우주 + 별 + 궤도 ===== */
+  #bg{position:absolute;inset:0;background:
+      radial-gradient(1200px 700px at 78% 40%, rgba(90,70,190,.55), transparent 70%),
+      radial-gradient(900px 600px at 15% 80%, rgba(40,90,200,.35), transparent 70%),
+      linear-gradient(135deg,#0f1538 0%,#1c1f5c 55%,#3b2f7a 100%)}
+  #bg .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.13) 1.3px,transparent 1.5px);background-size:46px 46px;opacity:.5}
+  #bg svg{position:absolute;inset:0;width:100%;height:100%}
+  #bg .ring{fill:none;stroke:rgba(255,255,255,.14);stroke-width:2}
+  #bg .star{fill:#fff}
+  #bg .glow{fill:#9fc4ff;filter:drop-shadow(0 0 10px #9fc4ff)}
+
+  .scene{position:absolute;inset:0;padding:120px 150px;display:none;overflow:hidden}
+  .scene.on{display:block}
+  .center{text-align:center}
+  .tag{display:inline-block;font-family:var(--sans);font-weight:600;font-size:30px;letter-spacing:.08em;color:var(--sky);
+       border:2px solid rgba(143,184,255,.55);border-radius:999px;padding:10px 34px;background:rgba(15,21,56,.45)}
+  h1{font-family:var(--head);font-weight:400;font-size:118px;line-height:1.2;letter-spacing:-.01em;
+     text-shadow:0 6px 30px rgba(0,0,0,.45)}
+  h2{font-family:var(--head);font-weight:400;font-size:84px;line-height:1.25;text-shadow:0 6px 24px rgba(0,0,0,.4)}
+  .sub{font-family:var(--body);font-size:46px;line-height:1.55;color:var(--soft)}
+  .grad{background:linear-gradient(90deg,#fff,#bcd5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .gold{color:var(--gold)} .mint{color:var(--mint)} .lav{color:var(--lav)} .sky{color:var(--sky)}
+  .bottom{position:absolute;left:150px;right:150px;bottom:110px}
+
+  /* 형광펜 밑줄 */
+  .hl{--w:0%;background:linear-gradient(transparent 62%,rgba(255,210,122,.55) 62%,rgba(255,210,122,.55) 92%,transparent 92%) no-repeat 0 0/var(--w) 100%}
+
+  /* 알약(chip) */
+  .chips{display:flex;gap:26px;justify-content:center;flex-wrap:wrap}
+  .chip{font-family:var(--sans);font-weight:600;font-size:34px;padding:18px 38px;border-radius:999px;
+        background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.28);backdrop-filter:blur(4px)}
+  .chip b{color:var(--gold);font-weight:700}
+
+  /* 큰 숫자 */
+  .big{font-family:var(--head);font-size:300px;line-height:1;color:var(--gold);text-shadow:0 0 60px rgba(255,210,122,.35)}
+  .big small{font-size:110px;color:#fff;margin-left:10px}
+
+  /* 걸어온 길: 가로 타임라인 */
+  .tl{position:relative;margin-top:70px;height:520px}
+  .tl .line{position:absolute;left:0;right:0;top:118px;height:4px;background:rgba(255,255,255,.22);transform-origin:left;border-radius:4px}
+  .tl .step{position:absolute;top:0;width:270px;text-align:center}
+  .tl .dot{width:34px;height:34px;border-radius:50%;background:var(--sky);margin:101px auto 0;box-shadow:0 0 0 8px rgba(143,184,255,.25),0 0 24px rgba(143,184,255,.8)}
+  .tl .step.last .dot{background:var(--gold);box-shadow:0 0 0 8px rgba(255,210,122,.25),0 0 28px rgba(255,210,122,.9)}
+  .tl .when{font-family:var(--sans);font-weight:700;font-size:34px;color:var(--gold);height:100px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px}
+  .tl .what{font-family:var(--head);font-size:34px;line-height:1.25;margin-top:26px;min-height:86px}
+  .tl .desc{font-family:var(--sans);font-size:24px;color:var(--soft);line-height:1.4;margin-top:6px}
+
+  /* 교육과정 특징 2×2 */
+  .feat{display:grid;grid-template-columns:790px 790px;gap:24px;justify-content:center;margin-top:36px}
+  .fb{display:flex;gap:26px;align-items:center;text-align:left;padding:22px 26px;border-radius:28px;
+      background:linear-gradient(160deg,rgba(255,255,255,.13),rgba(255,255,255,.05));border:1.5px solid rgba(255,255,255,.28);box-shadow:0 16px 50px rgba(0,0,0,.3)}
+  .fb .no{font-family:var(--sans);font-weight:800;font-size:40px;color:var(--gold);line-height:1.2;display:flex;align-items:center}
+    .fb .fd{font-family:var(--sans);font-size:25px;color:var(--soft);line-height:1.45;margin-top:10px}
+
+  /* 성과 카드 */
+  .cards{display:flex;gap:40px;justify-content:center;margin-top:30px}
+  .card{width:440px;padding:16px 16px 26px;border-radius:32px;text-align:center;
+        background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.05));border:1.5px solid rgba(255,255,255,.3);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+  .card .ic{font-size:82px;line-height:1}
+  .card .n{font-family:var(--head);font-size:76px;line-height:1.1;margin-top:12px;color:var(--gold)}
+  .card .n small{font-size:48px;color:#fff;margin-left:6px}
+  .card .l{font-family:var(--head);font-size:44px;margin-top:10px}
+  .card .d{font-family:var(--sans);font-size:24px;color:var(--soft);margin-top:10px;line-height:1.4}
+
+  /* 뚜비(8프레임 콩콩) */
+  .ddubi{position:absolute;width:200px;height:224px;background:url('../../public/ddubi/hop1.png') no-repeat center/contain;filter:drop-shadow(0 12px 18px rgba(0,0,0,.45))}
+  .say{position:absolute;font-family:var(--sans);font-weight:600;font-size:30px;color:#26325e;background:#fff;border-radius:26px;padding:16px 28px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .say:after{content:'';position:absolute;left:-16px;bottom:22px;border:12px solid transparent;border-right-color:#fff;border-left:0}
+
+  /* ANARCHIVE 글자 */
+  .word{font-family:var(--sans);font-weight:800;font-size:200px;letter-spacing:.06em;line-height:1;
+        background:linear-gradient(90deg,#fff 0%,#b9a8ff 50%,#7fe3d3 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+        filter:drop-shadow(0 0 30px rgba(185,168,255,.35))}
+  .word .cursor{display:inline-block;width:10px;height:.9em;background:var(--lav);vertical-align:-.08em;margin-left:8px}
+  .eq{font-family:var(--sans);font-size:52px;color:var(--soft);margin-top:40px}
+  .eq b{color:var(--gold);font-weight:700}
+  .quote{font-family:var(--body);font-size:56px;line-height:1.5;margin-top:56px}
+
+  /* 성과보고회 안내 상자 */
+  .info{display:flex;gap:40px;justify-content:center;margin-top:60px}
+  .box{padding:40px 54px;border-radius:30px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.3);min-width:520px;text-align:center}
+  .box .k{font-family:var(--sans);font-weight:600;font-size:30px;color:var(--sky);letter-spacing:.1em}
+  .box .v{font-family:var(--head);font-size:66px;margin-top:10px;line-height:1.2}
+  .box .v small{font-size:38px;color:var(--soft)}
+  .prog{display:flex;gap:30px;justify-content:center;margin-top:44px}
+  .prog div{font-family:var(--sans);font-weight:600;font-size:34px;padding:20px 40px;border-radius:20px;background:rgba(185,168,255,.18);border:1.5px solid rgba(185,168,255,.5)}
+  .prog div b{color:var(--gold)}
+
+  /* 마지막: 로고 띠 */
+  .brand{display:inline-flex;align-items:center;gap:22px;font-family:var(--sans);font-weight:700;font-size:36px;color:#fff;
+         background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);border-radius:999px;padding:16px 40px}
+  .brand img{height:56px}
+  .arrow{font-size:60px;color:var(--gold)}
+
+  /* 사진: 배경 사진(어둡게) / 폴라로이드 / 특징 상자·카드 사진 / 필름 스트립 */
+  .bgp{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0}
+  .bgp:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,21,56,.55),rgba(15,21,56,.8) 70%,#0f1538)}
+  .bgp.dim:after{background:linear-gradient(180deg,rgba(15,21,56,.8),rgba(15,21,56,.92))}
+  .col{position:relative}
+  .pola{position:absolute;background:#fff;padding:18px 18px 14px;border-radius:10px;box-shadow:0 24px 60px rgba(0,0,0,.5);text-align:center}
+  .pola img{display:block;width:100%;object-fit:cover;border-radius:4px}
+  .pola .cap{font-family:var(--sans);font-weight:600;font-size:26px;color:#26325e;padding:12px 0 4px}
+  .fb img{width:200px;height:150px;object-fit:cover;border-radius:18px;flex:none}
+  .fb .no span{font-family:var(--head);font-weight:400;font-size:36px;color:#fff;margin-left:10px}
+  .card img{display:block;width:100%;height:210px;object-fit:cover;border-radius:20px}
+  .strip{position:absolute;left:0;right:0;bottom:70px;display:flex;gap:22px;justify-content:center}
+  .strip img{width:262px;height:176px;object-fit:cover;border-radius:16px;border:3px solid rgba(255,255,255,.7);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+
+  #hud{position:fixed;left:12px;bottom:10px;color:#9aa;font:16px monospace;z-index:9}
+  body.render #hud{display:none}
+  body.render{background:var(--navy)}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg">
+    <div class="dots"></div>
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="none">
+      <circle class="ring" cx="1500" cy="520" r="330"/>
+      <circle class="ring" cx="1500" cy="520" r="520" stroke-dasharray="14 18"/>
+      <circle class="ring" cx="1500" cy="520" r="720"/>
+      <circle class="ring" cx="120" cy="980" r="380" stroke-dasharray="10 16"/>
+      <circle class="star" cx="260" cy="180" r="4"/><circle class="star" cx="640" cy="120" r="3"/><circle class="star" cx="1180" cy="90" r="4"/>
+      <circle class="star" cx="1710" cy="160" r="3"/><circle class="star" cx="1830" cy="900" r="4"/><circle class="star" cx="520" cy="900" r="3"/>
+      <circle class="star" cx="980" cy="1010" r="3"/><circle class="star" cx="1390" cy="980" r="4"/><circle class="star" cx="80" cy="520" r="3"/>
+      <circle class="glow" cx="1500" cy="190" r="9"/><circle class="glow" cx="1830" cy="520" r="8"/><circle class="glow" cx="1200" cy="880" r="9"/>
+      <circle class="glow" cx="330" cy="700" r="7"/>
+      <path d="M0,760 C500,700 900,900 1920,640" fill="none" stroke="rgba(143,184,255,.35)" stroke-width="3"/>
+    </svg>
+  </div>
+
+  <!-- 1. 오프닝 -->
+  <section class="scene center" data-start="0" data-dur="6">
+    <div class="bgp" style="background-image:url('pick/34.jpg');background-position:center 30%" data-in="0" data-type="bgphoto"></div>
+    <div style="margin-top:150px" data-in="0.2"><span class="tag">2026 대구광역시 수성구</span></div>
+    <h1 style="margin-top:56px" data-in="0.7"><span class="grad">AI 영유아 선도기관</span></h1>
+    <div class="sub" style="margin-top:34px" data-in="1.5">AI 미래성장 아카데미 <span class="gold">「보육을 디자인하다」</span></div>
+    <div class="sub" style="margin-top:14px;font-size:38px" data-in="2.2">AI 기술과 보육 현장을 잇는 실천적 모델</div>
+  </section>
+
+  <!-- 2. 14개 어린이집 -->
+  <section class="scene" data-start="6" data-dur="7">
+    <div class="col" style="width:920px;margin-top:10px">
+      <div data-in="0.2"><span class="tag">함께 걷는 어린이집</span></div>
+      <div style="margin-top:14px" data-in="0.5" data-type="pop"><span class="big" style="font-size:230px" data-in="0.5" data-type="count" data-to="14">0</span><span class="big" style="font-size:230px"><small style="font-size:84px">개 어린이집</small></span></div>
+      <h2 style="margin-top:0;font-size:62px" data-in="1.4">수성구 관내 <span class="hl" data-in="2.0" data-type="hl">전문적 학습공동체</span></h2>
+      <div class="chips" style="justify-content:flex-start;margin-top:36px;gap:18px">
+        <div class="chip" data-in="2.8" data-type="pop">🤝 <b>공동연구</b></div>
+        <div class="chip" data-in="3.1" data-type="pop">🌱 <b>협력적 실천</b></div>
+        <div class="chip" data-in="3.4" data-type="pop">🤖 <b>AI 보육콘텐츠</b> 구현</div>
+      </div>
+    </div>
+    <div class="pola" style="left:1040px;top:110px;width:700px;transform:rotate(-3deg)" data-in="0.8" data-type="pop"><img src="pick/0.jpg" style="height:470px"><div class="cap">2026 수성구형 AI 선도기관 발대식</div></div>
+    <div class="pola" style="left:1180px;top:600px;width:560px;transform:rotate(2.5deg)" data-in="1.5" data-type="pop"><img src="pick/46.jpg" style="height:300px"><div class="cap">AI 선도기관 인증서</div></div>
+  </section>
+
+  <!-- 3. 교직원 AI 교육과정(학습공동체 6회) -->
+  <section class="scene" data-start="13" data-dur="9">
+    <div class="bgp dim" style="background-image:url('pick/60.jpg')" data-in="0" data-type="bgphoto"></div>
+    <div class="center" data-in="0.2"><span class="tag">수성구 교직원 AI 교육과정</span></div>
+    <h2 class="center" style="margin-top:28px;font-size:68px" data-in="0.5">원장·교직원이 직접 배우고 만드는 <span class="hl" data-in="1.1" data-type="hl">여섯 번의 과정</span></h2>
+    <div class="tl">
+      <div class="line" data-in="0.9" data-type="grow"></div>
+      <div class="step" style="left:0px" data-in="1.4" data-type="pop"><div class="when">1회 · 5월 19일</div><div class="dot"></div><div class="what">선도기관<br>원장 워크숍</div><div class="desc">수성구형 미래<br>보육 모델 설계</div></div>
+      <div class="step" style="left:270px" data-in="1.9" data-type="pop"><div class="when">2회 · 5월 27일</div><div class="dot"></div><div class="what">AI 창작<br>이미지 제작</div><div class="desc">교육과정<br>자료 개발</div></div>
+      <div class="step" style="left:540px" data-in="2.4" data-type="pop"><div class="when">3회 · 6월 23일</div><div class="dot"></div><div class="what">AI 교육<br>콘텐츠 개발</div><div class="desc">뚜비 그림책·<br>동요 제작</div></div>
+      <div class="step" style="left:810px" data-in="2.9" data-type="pop"><div class="when">4회 · 7월 14일</div><div class="dot"></div><div class="what">Agentic AI<br>구축·개발</div><div class="desc">업무 자동화<br>시스템 구축</div></div>
+      <div class="step" style="left:1080px" data-in="3.4" data-type="pop"><div class="when">5회 · 8월 11일</div><div class="dot"></div><div class="what">AI 챗봇<br>개발 프로젝트</div><div class="desc">선도기관<br>홈페이지 개발</div></div>
+      <div class="step last" style="left:1350px" data-in="3.9" data-type="pop"><div class="when">6회 · 9월 15일</div><div class="dot"></div><div class="what gold">AI 융합<br>콘텐츠 개발</div><div class="desc">AI 프로젝트<br>전시 설계</div></div>
+    </div>
+  </section>
+
+  <!-- 4. 수성구만의 교육과정 특징 -->
+  <section class="scene center" data-start="22" data-dur="9.5">
+    <div style="margin-top:0" data-in="0.2"><span class="tag">수성구만의 교육과정</span></div>
+    <h2 style="margin-top:22px;font-size:68px" data-in="0.5">배우는 데서 그치지 않고,<br><span class="hl" data-in="1.2" data-type="hl">직접 만들어 현장에 남기는</span> 과정</h2>
+    <div class="feat">
+      <div class="fb" data-in="1.8" data-type="pop"><img src="pick/33.jpg"><div><div class="no">01 <span>원장이 먼저 설계합니다</span></div><div class="fd">원장 워크숍에서 수성구형 보육 모델을 직접 그립니다</div></div></div>
+      <div class="fb" data-in="2.2" data-type="pop"><img src="pick/12.jpg"><div><div class="no">02 <span>교직원이 직접 창작합니다</span></div><div class="fd">AI로 우리 원의 이야기를 그림책과 동요로 만듭니다</div></div></div>
+      <div class="fb" data-in="2.6" data-type="pop"><img src="pick/14.jpg"><div><div class="no">03 <span>업무는 AI에게 맡깁니다</span></div><div class="fd">Agentic AI로 행정 업무 자동화 시스템을 만듭니다</div></div></div>
+      <div class="fb" data-in="3.0" data-type="pop"><img src="pick/9.jpg"><div><div class="no">04 <span>결과가 현장에 남습니다</span></div><div class="fd">챗봇·홈페이지·전시까지 스스로 구현합니다</div></div></div>
+    </div>
+  </section>
+
+  <!-- 5. 만들어 낸 것 -->
+  <section class="scene center" data-start="31.5" data-dur="8">
+    <div style="margin-top:0" data-in="0.2"><span class="tag">함께 만든 결과</span></div>
+    <h2 style="margin-top:22px" data-in="0.5">뚜비와 함께 만든 <span class="hl" data-in="1.1" data-type="hl">AI 보육콘텐츠</span></h2>
+    <div class="cards">
+      <div class="card" data-in="1.5" data-type="pop"><img src="pick/17.jpg" style="object-position:center 30%"><div class="n">14<small>권</small></div><div class="l">AI 그림책</div><div class="d">어린이집마다 한 권,<br>우리 아이들의 이야기</div></div>
+      <div class="card" data-in="1.9" data-type="pop"><img src="pick/7.jpg"><div class="n">14<small>곡</small></div><div class="l">AI 동요</div><div class="d">그림책과 짝을 이룬<br>우리 원의 노래</div></div>
+      <div class="card" data-in="2.3" data-type="pop"><img src="pick/8.jpg"><div class="n" style="font-size:60px;line-height:1.6">굿즈 · 챗봇</div><div class="l">AI 융합 프로젝트</div><div class="d">현장에서 바로 쓰는<br>선도기관의 실천</div></div>
+    </div>
+    <div class="ddubi" style="left:560px;top:850px;width:150px;height:168px" data-in="3.0" data-type="sprite"></div>
+    <div class="say" style="left:720px;top:890px" data-in="3.6" data-type="pop">수성구 아이들을 위한 단 한 권의 동화책!</div>
+  </section>
+
+  <!-- 6. ANARCHIVE -->
+  <section class="scene center" data-start="39.5" data-dur="7.5">
+    <div style="margin-top:60px" data-in="0.2"><span class="tag">멈추지 않는 기록</span></div>
+    <div style="margin-top:40px"><span class="word" data-in="0.6" data-type="type" data-text="ANARCHIVE"></span><span class="word cursor"></span></div>
+    <div class="eq" data-in="2.4"><b>an</b>(멈추지 않는) + <b>archive</b>(기록)</div>
+    <div class="quote" style="margin-top:36px" data-in="3.2">완결이 아닌, <span class="hl" data-in="3.8" data-type="hl">지속가능한 미래 자산</span>으로 이어지는 기록</div>
+    <div class="strip">
+      <img src="pick/51.jpg" data-in="4.2" data-type="pop">
+      <img src="pick/62.jpg" data-in="4.35" data-type="pop">
+      <img src="pick/70.jpg" data-in="4.5" data-type="pop">
+      <img src="pick/73.jpg" data-in="4.65" data-type="pop">
+      <img src="pick/83.jpg" data-in="4.8" data-type="pop">
+      <img src="pick/90.jpg" data-in="4.95" data-type="pop">
+    </div>
+  </section>
+
+  <!-- 7. 마무리 -->
+  <section class="scene center" data-start="47" data-dur="6.5">
+    <div class="bgp" style="background-image:url('pick/0.jpg');background-position:center 40%" data-in="0" data-type="bgphoto"></div>
+    <h1 style="margin-top:210px" data-in="0.4"><span class="grad">아이들과 함께하는 AI 교육</span></h1>
+    <div class="sub" style="margin-top:30px" data-in="1.2">사람을 이해하는 인공지능, <span class="hl" data-in="1.9" data-type="hl">미래를 준비하는 교육</span></div>
+    <div style="margin-top:70px" data-in="2.6" data-type="pop"><span class="brand"><img src="../../public/logo-suseong.png" alt="">AI선도기관 네트워크</span></div>
+    <div class="bottom sub" style="font-size:38px" data-in="3.4">참여기관을 눌러 각 어린이집을 만나보세요 <span class="arrow" data-in="3.8" data-type="float2">▼</span></div>
+    <div class="ddubi" style="right:120px;top:640px;left:auto" data-in="0.8" data-type="sprite"></div>
+  </section>
+</div>
+<div id="hud"></div>
+
+<script>
+(function(){
+  const stage=document.getElementById('stage');
+  const scenes=[...document.querySelectorAll('.scene')].map((el,i)=>({
+    el,i,start:+el.dataset.start,dur:+el.dataset.dur,
+    items:[...el.querySelectorAll('[data-in]')].map(it=>{
+      const o={el:it,off:+it.dataset.in,type:it.dataset.type||'up'};
+      if(o.type==='draw'){o.len=it.getTotalLength();it.style.strokeDasharray=o.len;}
+      if(o.type==='type'){o.text=it.dataset.text||it.textContent;}
+      if(o.type==='count'){o.to=+it.dataset.to;}
+      return o;
+    })
+  }));
+  const TOTAL=scenes.at(-1).start+scenes.at(-1).dur;
+  const FADE=0.6, IN=0.7;
+  const clamp=v=>v<0?0:v>1?1:v;
+  const easeOut=p=>1-Math.pow(1-p,3);
+  const back=p=>{const c=1.7;return 1+(c+1)*Math.pow(p-1,3)+c*Math.pow(p-1,2);};
+
+  function seek(t){
+    t=Math.max(0,Math.min(TOTAL-0.001,t));
+    scenes.forEach((s,i)=>{
+      const next=scenes[i+1];
+      const end=next?next.start+FADE:s.start+s.dur;
+      const on=t>=s.start&&t<end;
+      s.el.classList.toggle('on',on);
+      s.el.style.zIndex=i+1;
+      if(!on)return;
+      const fp=i===0?1:easeOut(clamp((t-s.start)/FADE));
+      s.el.style.opacity=fp;
+      const lt=t-s.start;
+      s.items.forEach(it=>{
+        const p=clamp((lt-it.off)/IN), e=easeOut(p), el=it.el;
+        switch(it.type){
+          case 'hl': el.style.setProperty('--w',(e*100)+'%'); break;
+          case 'draw': el.style.strokeDashoffset=it.len*(1-e); break;
+          case 'type': { const n=Math.round(it.text.length*clamp((lt-it.off)/1.4)); el.textContent=it.text.slice(0,n); break; }
+          case 'count': { const q=easeOut(clamp((lt-it.off)/1.3)); el.textContent=Math.round(it.to*q); break; }
+          case 'pop': el.style.opacity=p; el.style.transform=(el.dataset.rot||'')+` scale(${0.7+0.3*back(p)})`; break;
+          case 'stamp': el.style.opacity=clamp(p/0.35); el.style.transform=`scale(${1.9-0.9*e})`; break;
+          case 'grow': el.style.opacity=1; el.style.transform=`scaleX(${easeOut(clamp((lt-it.off)/2.2))})`; break;
+          case 'bgphoto': { const q=clamp(lt/1.2); el.style.opacity=q; el.style.transform=`scale(${1+0.06*(lt/s.dur)})`; break; }
+          case 'sprite': { el.style.opacity=p; const f=1+Math.floor((lt-it.off)*10)%8; el.style.backgroundImage=`url('../../public/ddubi/hop${lt<it.off?1:f}.png')`; break; }
+          case 'float2': { el.style.opacity=p; const y=Math.sin((lt-it.off)*4)*10; el.style.display='inline-block'; el.style.transform=`translateY(${y}px)`; break; }
+          default: el.style.opacity=p; el.style.transform=`translateY(${(1-e)*34}px)`;
+        }
+      });
+    });
+  }
+  scenes.forEach(s=>s.items.forEach(it=>{ if(it.type==='pop'){ const m=/rotate\([^)]*\)/.exec(it.el.getAttribute('style')||''); if(m) it.el.dataset.rot=m[0]; } }));
+  window.seek=seek; window.TOTAL=TOTAL;
+
+  const params=new URLSearchParams(location.search);
+  if(params.has('render')){ document.body.classList.add('render'); seek(0); return; }
+  document.body.classList.add('preview');
+  function fit(){ const sc=Math.min(innerWidth/1920,innerHeight/1080); stage.style.transform=`scale(${sc})`; stage.style.marginLeft=`${(innerWidth-1920*sc)/2}px`; }
+  addEventListener('resize',fit);fit();
+  const hud=document.getElementById('hud');
+  let t0=performance.now();
+  document.addEventListener('click',()=>{t0=performance.now();});
+  function loop(){ const t=((performance.now()-t0)/1000)%TOTAL; seek(t); hud.textContent=`${t.toFixed(1)}s / ${TOTAL.toFixed(1)}s · 클릭하면 처음부터`; requestAnimationFrame(loop); }
+  document.fonts.ready.then(()=>{t0=performance.now();loop();});
+})();
+</script>
+</body>
+</html>

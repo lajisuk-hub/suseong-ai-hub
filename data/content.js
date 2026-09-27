@@ -8,7 +8,16 @@
 // - title이 비어 있으면("") 글상자를 띄우지 않습니다 (그림 안에 글자가 이미 있을 때)
 // - light: true 면 밝은 그림용 (하얀 글상자 + 남색 글씨)
 // - textPos: "top" 이면 글상자가 위쪽에 나옵니다
+// - type: "video" 이면 영상 슬라이드 (video: 영상 파일, poster: 영상이 뜨기 전 보이는 그림)
+//   영상은 자동으로 소리 없이 재생되고, 끝나면 다음 슬라이드로 넘어갑니다.
 export const slides = [
+  {
+    type: "video",
+    video: "/slides/ai-hub-2026.mp4",
+    poster: "/slides/ai-hub-2026-poster.jpg",
+    title: "",
+    subtitle: "",
+  },
   {
     image: "/slides/hero-ai-education.png",
     title: "",
